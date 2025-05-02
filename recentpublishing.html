@@ -1,19 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Recent Publishing | Jasper Vale</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three Days Hollow</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans&family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
       font-family: 'Cinzel', serif;
       background-color: #0b0c10;
       color: #e0dfdc;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+    }
+    header {
+      background: url('https://i.imgur.com/THoxfK1.png') no-repeat center center/cover;
+      background-attachment: fixed;
+      height: 100vh;
     }
     nav {
       background-color: #1a1a1a;
@@ -28,40 +30,20 @@
       font-weight: bold;
       font-family: 'Cinzel', serif;
     }
-    header {
-      background: url('https://i.imgur.com/THoxfK1.png') no-repeat center center/cover;
-      background-attachment: fixed;
-      height: 60vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 4rem;
-      color: white;
-      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
-    }
-    main {
+    section {
+      padding: 3rem 2rem;
       max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
+      margin: auto;
+    }
+    .quote {
+      font-style: italic;
       text-align: center;
-    }
-    .book-cover {
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-    }
-    .description {
-      font-size: 1.2rem;
-      line-height: 1.8;
+      margin: 2rem 0;
     }
     .buy-button {
-      display: inline-block;
-      margin-top: 2rem;
+      display: block;
+      width: max-content;
+      margin: 2rem auto;
       padding: 1rem 2rem;
       background-color: #c19a6b;
       color: #0b0c10;
@@ -76,34 +58,137 @@
       font-size: 0.9rem;
       color: #777;
     }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup-content {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+    }
+    .popup-content input[type="text"],
+    .popup-content input[type="email"] {
+      padding: 0.75rem;
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 1rem;
+    }
+    .popup-content button {
+      padding: 0.75rem 2rem;
+      background-color: #c19a6b;
+      color: #0b0c10;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
+  <div class="popup" id="emailPopup">
+    <div class="popup-content">
+      <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+      <h2 style="font-size: 2.5rem; color: #c19a6b; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif;">Join the Journey</h2>
+      <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+      <p style="text-align: center; margin-bottom: 1.5rem;">Be the first to hear about upcoming releases, hidden lore, and exclusive content only available to subscribers.</p>
+      <form action="https://hooks.zapier.com/hooks/catch/22755005/2px73jo/" method="POST" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+        <div style="display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 500px;">
+          <input type="text" name="first_name" placeholder="First Name" required>
+          <input type="text" name="last_name" placeholder="Last Name" required>
+        </div>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <button type="submit" onclick="document.getElementById('emailPopup').style.display='none'">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About the Author</a>
-    <a href="recentpublishing.html">Recent Publishing</a>
+    <a href="publishing.html">Recent Publishing</a>
     <a href="coming-soon.html">Coming Soon</a>
   </nav>
 
   <header>
-    <h1>Recent Publishing</h1>
+    <div style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+      <h1 style="font-family: 'Cinzel', serif; font-size: 6rem; color: white; text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);">Beyond the Vale</h1>
+    </div>
   </header>
 
-  <main>
-    <img src="https://i.imgur.com/vsEAsYE.png" alt="Three Days Hollow Book Cover" class="book-cover"/>
-    <div class="description">
-      <p><em>Three Days Hollow</em> is a tale whispered across the boundary between life and death. In a realm where silence reigns and shadows linger, this standalone novel unearths the hidden war waged between light and darkness. A reckoning awaits within the hollow.</p>
+  <section>
+    <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+    <h2 style="font-size: 2.5rem; color: #c19a6b; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif;">Welcome to the Journey</h2>
+    <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+    <p style="font-size: 1.2rem; line-height: 1.8; text-align: center;">Welcome to a realm where fiction pulses with the rhythm of mystery and revelation. Here, tales are not merely told—they are unearthed from the depths of silence, crafted with shadow and starlight, and written across the unseen boundaries between life and death.</p>
+    <p style="font-size: 1.2rem; line-height: 1.8; text-align: center;">This sanctuary of words is for the wanderers, the questioners, and the ones who sense that truth often wears a veil. Whether you seek the flicker of hope in darkness or echoes of eternity whispered through the veil, you will find yourself among kindred spirits.</p>
+    <p style="font-size: 1.2rem; line-height: 1.8; text-align: center;">Step beyond the veil. Embrace the unknown. Let the hollow speak—and listen closely, for its story is waiting for you to hear it.</p>
+  </section>
 
-      <p>Through a vivid blend of atmosphere and allegory, this novel leads readers into a liminal space—between crucifixion and resurrection—where souls are sifted, hope is tested, and eternity listens for a cry from the depths. Jasper Vale weaves a story that is both haunting and healing, an exploration of unseen battles and sacred silences.</p>
-
-      <p>Fans of speculative fiction, spiritual allegory, and deeply reflective storytelling will find <em>Three Days Hollow</em> to be a rare and resonant journey. It invites the reader to peer into the hollow places of the soul—and listen closely to what echoes back.</p>
+  <section>
+    <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+    <h2 style="font-size: 2.5rem; color: #c19a6b; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif;">Featured Passage</h2>
+    <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+    <div class="quote" style="font-size: 1.4rem; line-height: 2;">
+      "In the hours when the heavens fell silent, a voice pierced the void.<br><br>
+      Not in shouts or thunder, but in stillness — a stillness so deep it split the veil between time and eternity.<br><br>
+      And through that breach came light, not blazing, but burning — steady, sovereign, and unrelenting."
     </div>
-    <a href="https://www.amazon.com/" class="buy-button" target="_blank">Read More</a>
-  </main>
+    <a href="#" class="buy-button">Read More</a>
+  </section>
+
+  <section>
+    <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+    <h2 style="font-size: 2.5rem; color: #c19a6b; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif;">About the Book</h2>
+    <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+    <div style="text-align: center;">
+      <img src="https://i.imgur.com/vsEAsYE.png" alt="Three Days Hollow Book Cover" style="max-width: 300px; width: 100%; height: auto; border-radius: 10px; margin-bottom: 1.5rem;">
+      <p style="font-size: 1.2rem; line-height: 1.8;">
+        In a realm where silence reigns and shadows linger, <em>Three Days Hollow</em> unearths the hidden war waged between darkness and light. This standalone tale invites you into the hollow space between death and resurrection—where nothing is as final as it seems.
+      </p>
+      <p style="font-size: 1.2rem; line-height: 1.8; font-style: italic; color: #c19a6b;">"What lies beyond death isn’t an end—it’s a reckoning."</p>
+    </div>
+  </section>
+
+  <section>
+    <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+    <h2 style="font-size: 2.5rem; color: #c19a6b; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif;">Themes & Symbols</h2>
+    <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+    <p style="font-size: 1.2rem; line-height: 1.8; text-align: center;">
+      <strong>The Key:</strong> Symbol of truth and access, the key represents the knowledge hidden in plain sight, waiting for hearts brave enough to open the unseen.
+    </p>
+    <p style="font-size: 1.2rem; line-height: 1.8; text-align: center;">
+      <strong>The Crown:</strong> A costly emblem of authority and sacrifice, echoing the unseen ruler who reigns not by force, but through willing surrender.
+    </p>
+    <p style="font-size: 1.2rem; line-height: 1.8; text-align: center;">
+      <strong>The Hollow:</strong> A liminal space—between death and resurrection, silence and song—where the soul confronts eternity and chooses which voice to follow.
+    </p>
+  </section>
 
   <footer>
-    &copy; 2025 Jasper Vale | All Rights Reserved
+    &copy; 2025 Three Days Hollow | All Rights Reserved
   </footer>
+
+  <script>
+    window.onload = () => {
+      if (!sessionStorage.getItem('popupShown')) {
+        setTimeout(() => {
+          document.getElementById('emailPopup').style.display = 'flex';
+          sessionStorage.setItem('popupShown', 'true');
+        }, 1000);
+      }
+    };
+  </script>
 </body>
 </html>
