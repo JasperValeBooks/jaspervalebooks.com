@@ -100,7 +100,53 @@
  
 
 
+<script>
+  function hidePopup() {
+    document.getElementById('emailPopup').style.display = 'none';
+    localStorage.setItem('popupShown', 'true');
+  }
 
+  function handleFormSubmission(form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      fetch("https://hooks.zapier.com/hooks/catch/22755005/2n31737/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }).then(() => {
+        if (form.id === "popupForm") {
+          hidePopup();
+        }
+        form.reset();
+      }).catch((error) => {
+        console.error("Submission error:", error);
+        alert("Something went wrong. Please try again later.");
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const popupForm = document.getElementById("popupForm");
+    const inlineForm = document.getElementById("inlineForm");
+    handleFormSubmission(popupForm);
+    handleFormSubmission(inlineForm);
+
+    if (!localStorage.getItem("popupShown")) {
+      setTimeout(() => {
+        document.getElementById("emailPopup").style.display = "flex";
+      }, 1000);
+    }
+  });
+</script>
 
 
 
