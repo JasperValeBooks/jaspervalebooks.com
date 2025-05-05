@@ -234,21 +234,46 @@
   <footer>
     &copy; 2025 Three Days Hollow | All Rights Reserved
   </footer>
-
 <script>
   function hidePopup() {
     document.getElementById('emailPopup').style.display = 'none';
     localStorage.setItem('popupShown', 'true');
   }
 
-  window.onload = () => {
-    if (!localStorage.getItem('popupShown')) {
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("popupForm");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default submission
+
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      fetch("https://hooks.zapier.com/hooks/catch/22755005/2n348xs/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }).then(() => {
+        hidePopup();       // ✅ Only hide after success
+        form.reset();      // Optional: Clear fields
+      }).catch((error) => {
+        console.error("Submission error:", error);
+        alert("Something went wrong. Please try again later.");
+      });
+    });
+
+    if (!localStorage.getItem("popupShown")) {
       setTimeout(() => {
-        document.getElementById('emailPopup').style.display = 'flex';
+        document.getElementById("emailPopup").style.display = "flex";
       }, 1000);
     }
-  };
+  });
 </script>
+
 
 
 
