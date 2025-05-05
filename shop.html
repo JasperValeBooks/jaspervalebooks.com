@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shop | Jasper Vale</title>
+  <title>Coming Soon | Jasper Vale</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans&family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -38,12 +38,20 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      color: #fff;
     }
 
     header h1 {
       font-size: 4rem;
       color: white;
       text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     }
 
     main {
@@ -56,6 +64,13 @@
       font-size: 1.2rem;
       text-align: center;
       line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .coming-soon-description p {
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 1.8;
     }
 
     .countdown {
@@ -63,6 +78,31 @@
       color: #c19a6b;
       text-align: center;
       margin: 1.5rem 0;
+    }
+
+    .countdown span {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .cta-section {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .cta-section a {
+      padding: 1rem 2rem;
+      background-color: #c19a6b;
+      color: #0b0c10;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 1.2rem;
+    }
+
+    .cta-section a:hover {
+      background-color: #a78559;
     }
 
     footer {
@@ -89,22 +129,34 @@
     <a href="about.html">About the Author</a>
     <a href="publishing.html">Recent Publishing</a>
     <a href="coming-soon.html">Coming Soon</a>
-    <a href="shop.html">Shop</a>
   </nav>
 
   <header>
-    <h1>Something Exciting is Coming Soon</h1>
+    <h1>Something Big is Coming</h1>
+    
   </header>
 
   <main>
-  <section style="text-align: center; margin: 2rem 0;">
-    <img src="https://i.imgur.com/vsEAsYE.png" alt="Three Days Hollow Book Cover" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-    <p style="margin-top: 1rem; font-size: 1.2rem;">Step into the mystery and uncover the secrets within <em>Three Days Hollow</em>.</p>
-    <a href="https://www.amazon.com/dp/EXAMPLEASIN" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background-color: #c19a6b; color: #0b0c10; font-weight: bold; border: none; border-radius: 5px; font-size: 1rem; text-decoration: none;">Buy Now</a>
-  </section>
-</main>
+    <div class="coming-soon-description">
+      <p>What lies beyond the veil is more than just a story—it's a journey of discovery. Something truly extraordinary is on the horizon, and soon, you'll step into a world where the boundaries between life, death, and mystery blur.</p>
+      <p>This upcoming release will push the boundaries of everything you thought you knew. Prepare yourself for an experience that will captivate, thrill, and leave you craving more.</p>
+    </div>
 
-<footer>
+    <div class="countdown">
+      <p>Countdown to the big reveal:</p>
+      <p><span>30 days 12 hours 15 minutes</span></p>
+    </div>
+
+    <div class="cta-section">
+  <p>Don’t miss out. Join the journey and be the first to know when it’s time to reveal all.</p>
+  <form action="https://formspree.io/f/xkgrrbre" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required style="padding: 0.8rem; font-size: 1rem; border-radius: 5px; border: none; margin-right: 0.5rem;">
+    <button type="submit" style="padding: 0.8rem 1.5rem; background-color: #c19a6b; color: #0b0c10; font-weight: bold; border: none; border-radius: 5px; font-size: 1rem;">Subscribe</button>
+  </form>
+</div>
+  </main>
+
+  <footer>
     <p>&copy; 2025 Jasper Vale | All Rights Reserved</p>
   </footer>
 </body>
