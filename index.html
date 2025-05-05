@@ -213,6 +213,14 @@
     }
   };
 </script>
+  <script>
+  document.querySelector("form").addEventListener("submit", function(e) {
+    setTimeout(() => {
+      window.location.href = "thank-you.html"; // Create this page
+    }, 100); // Small delay to let Zapier catch the hook
+  });
+</script>
+
 
 </body>
 </html>
