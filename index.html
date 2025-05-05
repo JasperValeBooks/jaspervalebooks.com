@@ -98,88 +98,7 @@
 </head>
 <body>
  
-<!-- POPUP FORM -->
-<div class="popup" id="emailPopup">
-  <div class="popup-content">
-    <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
-    <h2 style="font-size: 2.5rem; color: #c19a6b; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif;">Join the Journey</h2>
-    <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
-    <p style="text-align: center; margin-bottom: 1.5rem;">Be the first to hear about upcoming releases, hidden lore, and exclusive content only available to subscribers.</p>
-    <form id="popupForm" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-      <div style="display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 500px;">
-        <input type="text" name="first_name" placeholder="First Name" required>
-        <input type="text" name="last_name" placeholder="Last Name" required>
-      </div>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-</div>
 
-<!-- INLINE FORM -->
-<section>
-  <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
-  <h2 style="font-size: 2.5rem; color: #c19a6b; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif;">Join the Journey</h2>
-  <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
-  <p style="text-align: center; margin-bottom: 1.5rem;">Be the first to hear about upcoming releases, hidden lore, and exclusive content only available to subscribers.</p>
-  <form id="inlineForm" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-    <div style="display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 640px;">
-      <input type="text" name="first_name" placeholder="First Name" required style="padding: 0.75rem; width: 100%; border-radius: 5px; border: none;">
-      <input type="text" name="last_name" placeholder="Last Name" required style="padding: 0.75rem; width: 100%; border-radius: 5px; border: none;">
-    </div>
-    <input type="email" name="email" placeholder="Email Address" required style="padding: 0.75rem; width: 100%; max-width: 300px; border-radius: 5px; border: none;">
-    <button type="submit" style="padding: 0.75rem 2rem; background-color: #c19a6b; color: #0b0c10; border: none; border-radius: 5px; font-weight: bold;">Subscribe</button>
-  </form>
-</section>
-
-<!-- SCRIPT -->
-<script>
-  function hidePopup() {
-    document.getElementById('emailPopup').style.display = 'none';
-    localStorage.setItem('popupShown', 'true');
-  }
-
-  function handleFormSubmission(form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-      const data = {};
-      formData.forEach((value, key) => {
-        data[key] = value;
-      });
-
-      fetch("https://hooks.zapier.com/hooks/catch/22755005/2n348xs/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      }).then(() => {
-        if (form.id === "popupForm") {
-          hidePopup();
-        }
-        form.reset();
-      }).catch((error) => {
-        console.error("Submission error:", error);
-        alert("Something went wrong. Please try again later.");
-      });
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const popupForm = document.getElementById("popupForm");
-    const inlineForm = document.getElementById("inlineForm");
-    handleFormSubmission(popupForm);
-    handleFormSubmission(inlineForm);
-
-    if (!localStorage.getItem("popupShown")) {
-      setTimeout(() => {
-        document.getElementById("emailPopup").style.display = "flex";
-      }, 1000);
-    }
-  });
-</script>
 
 
 
@@ -246,7 +165,21 @@
     <button type="submit" style="padding: 0.75rem 2rem; background-color: #c19a6b; color: #0b0c10; border: none; border-radius: 5px; font-weight: bold;">Subscribe</button>
   </form>
 </section>
-
+<!-- INLINE FORM -->
+<section>
+  <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+  <h2 style="font-size: 2.5rem; color: #c19a6b; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif;">Join the Journey</h2>
+  <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
+  <p style="text-align: center; margin-bottom: 1.5rem;">Be the first to hear about upcoming releases, hidden lore, and exclusive content only available to subscribers.</p>
+  <form id="inlineForm" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+    <div style="display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 640px;">
+      <input type="text" name="first_name" placeholder="First Name" required style="padding: 0.75rem; width: 100%; border-radius: 5px; border: none;">
+      <input type="text" name="last_name" placeholder="Last Name" required style="padding: 0.75rem; width: 100%; border-radius: 5px; border: none;">
+    </div>
+    <input type="email" name="email" placeholder="Email Address" required style="padding: 0.75rem; width: 100%; max-width: 300px; border-radius: 5px; border: none;">
+    <button type="submit" style="padding: 0.75rem 2rem; background-color: #c19a6b; color: #0b0c10; border: none; border-radius: 5px; font-weight: bold;">Subscribe</button>
+  </form>
+</section>
   <section>
   <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
   <h2 style="font-size: 2.5rem; color: #c19a6b; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif;">Themes & Symbols</h2>
