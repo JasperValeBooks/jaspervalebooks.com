@@ -38,12 +38,20 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      color: #fff;
     }
 
     header h1 {
       font-size: 4rem;
       color: white;
       text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     }
 
     main {
@@ -56,6 +64,13 @@
       font-size: 1.2rem;
       text-align: center;
       line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .coming-soon-description p {
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 1.8;
     }
 
     .countdown {
@@ -63,6 +78,31 @@
       color: #c19a6b;
       text-align: center;
       margin: 1.5rem 0;
+    }
+
+    .countdown span {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .cta-section {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .cta-section a {
+      padding: 1rem 2rem;
+      background-color: #c19a6b;
+      color: #0b0c10;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 1.2rem;
+    }
+
+    .cta-section a:hover {
+      background-color: #a78559;
     }
 
     footer {
@@ -89,22 +129,27 @@
     <a href="about.html">About the Author</a>
     <a href="publishing.html">Recent Publishing</a>
     <a href="coming-soon.html">Coming Soon</a>
-    <a href="shop.html">Shop</a>
   </nav>
 
   <header>
-    <h1>Something Exciting is Coming Soon</h1>
+    <h1>Something Big is Coming</h1>
+    <p>Get ready for the next chapter in the world of Jasper Vale</p>
   </header>
 
   <main>
     <div class="coming-soon-description">
-      <p>Stay tuned for an upcoming release that will take you into new realms of mystery and intrigue. Something new is coming your way, and you won’t want to miss it!</p>
-      <p>We can’t reveal too much just yet, but prepare for an adventure like no other.</p>
+      <p>What lies beyond the veil is more than just a story—it's a journey of discovery. Something truly extraordinary is on the horizon, and soon, you'll step into a world where the boundaries between life, death, and mystery blur.</p>
+      <p>This upcoming release will push the boundaries of everything you thought you knew. Prepare yourself for an experience that will captivate, thrill, and leave you craving more.</p>
     </div>
 
     <div class="countdown">
       <p>Countdown to the big reveal:</p>
-      <p><strong>30 days 12 hours 15 minutes</strong></p> <!-- Adjust based on actual release time -->
+      <p><span>30 days 12 hours 15 minutes</span></p>
+    </div>
+
+    <div class="cta-section">
+      <p>Don’t miss out. Join the journey and be the first to know when it’s time to reveal all.</p>
+      <a href="mailto:author@jaspervalebooks.com">Subscribe for Updates</a>
     </div>
   </main>
 
@@ -113,4 +158,3 @@
   </footer>
 </body>
 </html>
-
