@@ -104,18 +104,52 @@
     <h2 style="font-size: 2.5rem; color: #c19a6b; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif;">Join the Journey</h2>
     <hr style="border: none; border-top: 2px solid #c19a6b; width: 60%; margin: 2rem auto;">
     <p style="text-align: center; margin-bottom: 1.5rem;">Be the first to hear about upcoming releases, hidden lore, and exclusive content only available to subscribers.</p>
-    <form action="https://hooks.zapier.com/hooks/catch/22755005/2n348xs/" method="POST" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+    <form id="popupForm" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
       <div style="display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 500px;">
         <input type="text" name="first_name" placeholder="First Name" required>
         <input type="text" name="last_name" placeholder="Last Name" required>
-
-
       </div>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <button type="submit" onclick="hidePopup()">Subscribe</button>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <button type="submit">Subscribe</button>
     </form>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("popupForm");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // stop form from reloading page
+
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      fetch("https://hooks.zapier.com/hooks/catch/22755005/2n348xs/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }).then(() => {
+        document.getElementById("emailPopup").style.display = "none";
+        localStorage.setItem("popupShown", "true");
+      }).catch((error) => {
+        console.error("Submission error:", error);
+        alert("Something went wrong. Please try again later.");
+      });
+    });
+
+    if (!localStorage.getItem("popupShown")) {
+      setTimeout(() => {
+        document.getElementById("emailPopup").style.display = "flex";
+      }, 1000);
+    }
+  });
+</script>
+
 
   <nav>
     <a href="index.html">Home</a>
@@ -213,13 +247,8 @@
     }
   };
 </script>
-  <script>
-  document.querySelector("form").addEventListener("submit", function(e) {
-    setTimeout(() => {
-      window.location.href = "thank-you.html"; // Create this page
-    }, 100); // Small delay to let Zapier catch the hook
-  });
-</script>
+
+
 
 
 </body>
