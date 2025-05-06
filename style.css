@@ -190,11 +190,11 @@ main {
 
 /* ===== Book Image ===== */
 .book-cover {
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto 2rem auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
