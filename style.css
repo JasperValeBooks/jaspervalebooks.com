@@ -1,0 +1,288 @@
+/* ======= Global Styles ======= */
+body {
+  font-family: 'Cinzel', serif;
+  background-color: #0b0c10;
+  color: #e0dfdc;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: #c19a6b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2 {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+}
+
+/* ======= Navigation ======= */
+.nav-container {
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.mobile-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* ======= Header ======= */
+header {
+  background: url('https://i.imgur.com/THoxfK1.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: white;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* ======= Main Layout ======= */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+/* ======= About Page ======= */
+.author-photo {
+  width: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  border: 3px solid #555;
+}
+
+.bio {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* ======= Publishing Page ======= */
+.book-cover {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  padding: 0 1rem;
+}
+
+.buy-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #c19a6b;
+  color: #0b0c10;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+.buy-button:hover {
+  background-color: #a78559;
+}
+
+/* ======= Coming Soon Page ======= */
+.coming-soon-description {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.countdown {
+  font-size: 2rem;
+  color: #c19a6b;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.countdown span {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.cta-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.cta-section input,
+.cta-section button {
+  font-size: 1rem;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.cta-section button {
+  background-color: #c19a6b;
+  color: #0b0c10;
+  font-weight: bold;
+}
+
+.cta-section button:hover {
+  background-color: #a78559;
+}
+
+/* ======= Shop Page ======= */
+.shop-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.shop-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.shop-section p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.shop-section a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #c19a6b;
+  color: #0b0c10;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.shop-section a:hover {
+  background-color: #a78559;
+}
+
+/* ======= Footer ======= */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  .bio,
+  .description,
+  .shop-section p,
+  .coming-soon-description {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .buy-button,
+  .shop-section a {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .author-photo {
+    width: 150px;
+  }
+
+  .countdown {
+    font-size: 1.5rem;
+  }
+
+  .countdown span {
+    font-size: 2rem;
+  }
+
+  .cta-section input,
+  .cta-section button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .cta-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  header {
+    background-position: top center;
+    background-size: cover;
+  }
+}
