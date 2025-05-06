@@ -181,6 +181,7 @@ main {
   font-weight: bold;
   border-radius: 5px;
   font-size: 1.1rem;
+  vertical-align: middle;
 }
 .centered {
   display: block;
