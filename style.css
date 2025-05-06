@@ -26,7 +26,7 @@ a:hover {
   left: 0;
   right: 0;
   width: 100%;
-  background-color: rgba(26, 26, 26, 0.6); /* Semi-transparent black */
+  /*background-color: rgba(26, 26, 26, 0.6);  Semi-transparent black */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -34,7 +34,7 @@ a:hover {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
-  backdrop-filter: blur(6px); /* Optional: adds a glassy blur effect */
+  /*backdrop-filter: blur(6px);  Optional: adds a glassy blur effect */
 }
 
 
