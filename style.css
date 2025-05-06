@@ -201,6 +201,7 @@ main {
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-top: 1rem;
+  align-items: center;
 }
 
 .subscribe-form input[type="email"] {
@@ -210,6 +211,7 @@ main {
   border: none;
   width: 300px;
   max-width: 100%;
+  align-items: center;
 }
 
 .subscribe-form button {
@@ -222,10 +224,12 @@ main {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  align-items: center;
 }
 
 .subscribe-form button:hover {
   background-color: #a78559;
+  align-items: center;
 }
 .subscribe-form input[type="email"] {
   padding: 0.8rem;
@@ -235,9 +239,11 @@ main {
   width: 250px;          /* ⬅️ Adjusted from 300px */
   max-width: 100%;
   box-sizing: border-box;
+  align-items: center;
 }
 .subscribe-form {
   justify-content: center;
+  align-items: center;
   align-items: center;
 }
 
