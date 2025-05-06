@@ -134,6 +134,15 @@ main {
   margin: 2rem 0;
   padding: 0 1rem;
 }
+/* ===== About Page =====*/
+.author-photo {
+  width: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  border: 3px solid #555;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
 /* ===== Book Image ===== */
 .book-cover {
