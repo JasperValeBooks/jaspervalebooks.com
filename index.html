@@ -63,7 +63,9 @@
       font-family: 'Cinzel', serif;
       font-size: 1.1rem;
     }
-
+    .mobile-menu.show {
+      display: flex;
+    }
     section {
       padding: 3rem 2rem;
       max-width: 800px;
@@ -142,7 +144,7 @@
     @media (max-width: 768px) {
       header {
         background-position: top center;
-        background-size: contain; /* or cover, depending on desired look */
+        background-size: cover; /* or cover, depending on desired look */
         background-repeat: no-repeat;
         background-attachment: scroll; /* Prevents zoom/glitch on mobile */
       }
@@ -315,6 +317,15 @@
       }
     });
   </script>
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    if (menu) {
+      menu.classList.toggle("show");
+    }
+  }
+</script>
+
 
 </body>
 </html>
