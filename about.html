@@ -15,24 +15,53 @@
       line-height: 1.6;
     }
 
-    nav {
+    .nav-container {
       background-color: #1a1a1a;
-      padding: 1rem;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .nav-links {
+      display: flex;
       gap: 2rem;
     }
 
-    nav a {
+    .nav-links a {
       color: #ffffff;
       text-decoration: none;
       font-weight: bold;
       font-family: 'Cinzel', serif;
     }
 
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #1a1a1a;
+      width: 100%;
+      padding: 1rem;
+      gap: 1rem;
+    }
+
+    .mobile-menu a {
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+    }
+
     header {
-      background: url('https://i.imgur.com/THoxfK1.png') no-repeat center center/cover;
-      background-attachment: fixed;
+      background: url('https://i.imgur.com/THoxfK1.png') no-repeat center center;
+      background-size: cover;
+      background-attachment: scroll;
       height: 60vh;
       display: flex;
       justify-content: center;
@@ -41,7 +70,7 @@
     }
 
     header h1 {
-      font-size: 4rem;
+      font-size: clamp(2rem, 8vw, 4rem);
       color: white;
       text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
     }
@@ -82,21 +111,67 @@
     a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+
+      main {
+        padding: 1.5rem 1rem;
+      }
+
+      .author-photo {
+        width: 150px;
+      }
+
+      .bio {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+      }
+
+      header {
+        background-position: top center;
+        background-size: cover;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
+
+  <!-- Navigation -->
+  <div class="nav-container">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About the Author</a>
+      <a href="publishing.html">Recent Publishing</a>
+      <a href="coming-soon.html">Coming Soon</a>
+      <a href="shop.html">Shop</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About the Author</a>
     <a href="publishing.html">Recent Publishing</a>
     <a href="coming-soon.html">Coming Soon</a>
     <a href="shop.html">Shop</a>
-  </nav>
+  </div>
 
+  <!-- Header -->
   <header>
     <h1>About the Author</h1>
   </header>
 
+  <!-- Main Content -->
   <main>
     <img src="https://i.imgur.com/erfO7m3.png" alt="Jasper Vale" class="author-photo" />
 
@@ -112,5 +187,13 @@
   <footer>
     &copy; 2025 Jasper Vale | All Rights Reserved
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("show");
+    }
+  </script>
+
 </body>
 </html>
