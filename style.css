@@ -227,6 +227,19 @@ main {
 .subscribe-form button:hover {
   background-color: #a78559;
 }
+.subscribe-form input[type="email"] {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  width: 250px;          /* ⬅️ Adjusted from 300px */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.subscribe-form {
+  justify-content: center;
+  align-items: center;
+}
 
 
 /* ===== Footer ===== */
