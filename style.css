@@ -58,14 +58,22 @@ a:hover {
   color: #ffffff;
   cursor: pointer;
 }
-
 .mobile-menu {
-  display: none;
-  flex-direction: column;
-  background-color: #1a1a1a;
+  position: fixed;
+  top: 60px; /* adjust depending on your nav height */
+  left: 0;
   width: 100%;
+  background-color: #0b0c10;
   padding: 1rem;
   gap: 1rem;
+  display: none;
+  flex-direction: column;
+  z-index: 999;
+}
+body {
+  padding-top: 70px; /* match or slightly exceed the nav height */
+}
+
 }
 
 .mobile-menu a {
