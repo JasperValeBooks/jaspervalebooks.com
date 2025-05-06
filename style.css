@@ -190,6 +190,44 @@ main {
 .buy-button:hover {
   background-color: #a78559;
 }
+.cta-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.subscribe-form input[type="email"] {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  width: 300px;
+  max-width: 100%;
+}
+
+.subscribe-form button {
+  padding: 0.8rem 1.5rem;
+  background-color: #c19a6b;
+  color: #0b0c10;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: #a78559;
+}
+
 
 /* ===== Footer ===== */
 footer {
@@ -207,6 +245,18 @@ footer {
     background-attachment: scroll;
   }
 }
+@media (max-width: 768px) {
+  .subscribe-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe-form input,
+  .subscribe-form button {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
