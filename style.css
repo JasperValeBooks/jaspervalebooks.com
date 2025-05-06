@@ -21,12 +21,19 @@ a:hover {
 
 /* ===== Navigation ===== */
 .nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: #1a1a1a;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 1rem 2rem;
+  z-index: 1000; /* ensures it stays on top of all content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); /* optional: adds shadow effect */
 }
+
 
 .nav-links {
   display: flex;
