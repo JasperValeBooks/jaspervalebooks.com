@@ -15,33 +15,61 @@
       line-height: 1.6;
     }
 
-    nav {
+    .nav-container {
       background-color: #1a1a1a;
-      padding: 1rem;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .nav-links {
+      display: flex;
       gap: 2rem;
     }
 
-    nav a {
+    .nav-links a {
       color: #ffffff;
       text-decoration: none;
       font-weight: bold;
-      font-family: 'Cinzel', serif;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #1a1a1a;
+      width: 100%;
+      padding: 1rem;
+      gap: 1rem;
+    }
+
+    .mobile-menu a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1rem;
     }
 
     header {
-      background: url('https://i.imgur.com/THoxfK1.png') no-repeat center center/cover;
-      background-attachment: fixed;
+      background: url('https://i.imgur.com/THoxfK1.png') no-repeat center center;
+      background-size: cover;
+      background-attachment: scroll;
       height: 60vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 0 1rem;
     }
 
     header h1 {
-      font-size: 4rem;
+      font-size: clamp(2.5rem, 8vw, 4rem);
       color: white;
       text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
     }
@@ -52,17 +80,38 @@
       padding: 2rem;
     }
 
-    .coming-soon-description {
-      font-size: 1.2rem;
+    .shop-section {
       text-align: center;
-      line-height: 1.8;
+      margin: 2rem 0;
     }
 
-    .countdown {
-      font-size: 2rem;
-      color: #c19a6b;
-      text-align: center;
-      margin: 1.5rem 0;
+    .shop-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .shop-section p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .shop-section a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #c19a6b;
+      color: #0b0c10;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .shop-section a:hover {
+      background-color: #a78559;
     }
 
     footer {
@@ -81,31 +130,87 @@
     a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+
+      main {
+        padding: 1.5rem 1rem;
+      }
+
+      .shop-section p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+      }
+
+      .shop-section a {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      header {
+        background-position: top center;
+        background-size: cover;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
+
+  <!-- Navigation -->
+  <div class="nav-container">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About the Author</a>
+      <a href="publishing.html">Recent Publishing</a>
+      <a href="coming-soon.html">Coming Soon</a>
+      <a href="shop.html">Shop</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About the Author</a>
     <a href="publishing.html">Recent Publishing</a>
     <a href="coming-soon.html">Coming Soon</a>
     <a href="shop.html">Shop</a>
-  </nav>
+  </div>
 
+  <!-- Header -->
   <header>
     <h1>Shop The Latest Publishings</h1>
   </header>
 
+  <!-- Main Content -->
   <main>
-  <section style="text-align: center; margin: 2rem 0;">
-    <img src="https://i.imgur.com/vsEAsYE.png" alt="Three Days Hollow Book Cover" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-    <p style="margin-top: 1rem; font-size: 1.2rem;">Step into the mystery and uncover the secrets within <em>Three Days Hollow</em>.</p>
-    <a href="https://www.amazon.com/dp/EXAMPLEASIN" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background-color: #c19a6b; color: #0b0c10; font-weight: bold; border: none; border-radius: 5px; font-size: 1rem; text-decoration: none;">Buy Now</a>
-  </section>
-</main>
+    <section class="shop-section">
+      <img src="https://i.imgur.com/vsEAsYE.png" alt="Three Days Hollow Book Cover">
+      <p>Step into the mystery and uncover the secrets within <em>Three Days Hollow</em>.</p>
+      <a href="https://www.amazon.com/dp/EXAMPLEASIN" target="_blank">Buy Now</a>
+    </section>
+  </main>
 
-<footer>
+  <!-- Footer -->
+  <footer>
     <p>&copy; 2025 Jasper Vale | All Rights Reserved</p>
   </footer>
+
+  <!-- Toggle Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
