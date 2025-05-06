@@ -1,4 +1,4 @@
-/* ===== Global ===== */
+/* ======= Global Styles ======= */
 body {
   font-family: 'Cinzel', serif;
   background-color: #0b0c10;
@@ -6,7 +6,9 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  font-size: 1.2rem; /* ← this sets the base font size */
 }
+
 
 a {
   color: #c19a6b;
