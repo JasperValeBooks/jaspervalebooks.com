@@ -64,7 +64,7 @@ a:hover {
 }
 
 /* ===== Header ===== */
-header {
+.hero-header {
   background: url('https://i.imgur.com/THoxfK1.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
@@ -76,7 +76,12 @@ header {
   padding: 0 1rem;
 }
 
-
+@media (max-width: 768px) {
+  .hero-header {
+    height: 60vh;
+    background-attachment: scroll;
+  }
+}
 
 header h1 {
   font-size: clamp(2.5rem, 8vw, 4rem);
