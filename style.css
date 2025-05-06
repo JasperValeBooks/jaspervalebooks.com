@@ -151,10 +151,12 @@ main {
   max-width: 300px;
   width: 100%;
   height: auto;
+  display: block;
+  margin: 0 auto 1.5rem auto;
   border-radius: 10px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 
 /* ===== Button ===== */
 .buy-button {
