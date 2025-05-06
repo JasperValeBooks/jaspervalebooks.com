@@ -68,7 +68,7 @@ header {
   background: url('https://i.imgur.com/THoxfK1.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-  height: 60vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
