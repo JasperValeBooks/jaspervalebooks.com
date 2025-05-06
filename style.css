@@ -300,8 +300,11 @@ footer {
 
   .subscribe-form input,
   .subscribe-form button {
-    width: 100%;
+    max-width: 100%;
   }
+}
+.buy-button {
+max-width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -323,7 +326,7 @@ footer {
   }
 
   .buy-button {
-    width: 100%;
+    max-width: 100%;
   }
 
   .book-cover {
