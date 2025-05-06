@@ -69,6 +69,7 @@ a:hover {
   display: none;
   flex-direction: column;
   z-index: 999;
+   height: 100vh;  
 }
 body {
   padding-top: 70px; /* match or slightly exceed the nav height */
@@ -80,7 +81,26 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  background-color: transparent;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+   height: 100vh;  
 }
+
+.mobile-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.mobile-menu {
+  max-width: 100%;
+  padding: 1rem 0;
+   height: 100vh;  
+}
+
 
 .mobile-menu.show {
   display: flex;
@@ -101,8 +121,9 @@ header {
 
 @media (max-width: 768px) {
   .hero-header {
-    height: 60vh;
+    height: 100vh;
     background-attachment: scroll;
+    
   }
 }
 
@@ -267,7 +288,7 @@ footer {
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   header {
-    height: 60vh;
+    height: 100vh;
     background-attachment: scroll;
   }
 }
