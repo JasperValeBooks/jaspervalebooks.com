@@ -81,14 +81,20 @@ header h1 {
   font-size: clamp(2.5rem, 8vw, 4rem);
   color: white;
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
+
 
 /* ======= Main Layout ======= */
 main {
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
 }
+
 
 /* ======= About Page ======= */
 .author-photo {
