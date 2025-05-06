@@ -64,11 +64,11 @@ a:hover {
 }
 
 /* ===== Header ===== */
-.hero-header {
+header {
   background: url('https://i.imgur.com/THoxfK1.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
