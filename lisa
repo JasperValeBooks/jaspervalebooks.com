@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Business Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        main {
+            padding: 2em;
+        }
+        section {
+            margin-bottom: 2em;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Business Name</h1>
+        <p>Mobile Barber Service | Your City</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p>Write a short introduction about your mobile barber business here. This is where you can talk about your experience, certifications, and passion for providing quality haircuts on the go.</p>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <ul>
+                <li>Haircuts</li>
+                <li>Beard Trimming</li>
+                <li>Shaves</li>
+                <li>Children’s Haircuts</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: [Your Email]</p>
+            <p>Phone: [Your Phone Number]</p>
+            <p>Service Area: [Your Service Area]</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Your Business Name. All rights reserved.
+    </footer>
+
+</body>
+</html>
