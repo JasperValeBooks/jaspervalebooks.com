@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazing Braids</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      background: url('https://i.imgur.com/odjCFsI.png') center/cover no-repeat;
+      background-attachment: fixed;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      width: 100%;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    main {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      color: #999;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 60px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+      padding-right: 20px;
+      font-family: 'Roboto', sans-serif;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    nav li {
+      position: relative;
+    }
+    nav a {
+      color: #999;
+      text-decoration: none;
+      padding: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    nav a.book {
+      background-color: #007bff;
+      border-radius: 4px;
+      margin-left: 10px;
+      color: white;
+      margin-right: 50px;
+    }
+    nav a:hover {
+      background-color: rgba(0,0,0,0.05);
+    }
+
+    nav li ul {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: rgba(255,255,255,0.9);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: none;
+      flex-direction: column;
+      min-width: 200px;
+      z-index: 1000;
+      border-radius: 4px;
+      overflow: hidden;
+      font-family: 'Roboto', sans-serif;
+    }
+    nav li ul li.separator {
+      border-bottom: 5px solid #000;
+      margin: 5px 0;
+    }
+    nav li ul li a {
+      padding: 12px 20px;
+      color: #666;
+      white-space: nowrap;
+      display: block;
+      border-bottom: none;
+    }
+    nav li ul li a::before {
+      margin-right: 5px;
+    }
+    nav li ul li:nth-child(1) a::before { content: '❓ '; }
+    nav li ul li:nth-child(2) a::before { content: '📍 '; }
+    nav li ul li:nth-child(3) a::before { content: '📜 '; }
+    nav li ul li:nth-child(5) a::before { content: '💳 '; }
+    nav li ul li:nth-child(6) a::before { content: '✍️ '; }
+    nav li ul li:nth-child(7) a::before { content: '💁 '; }
+    nav li ul li:nth-child(8) a::before { content: '⭐ '; }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownLinks = document.querySelectorAll('nav li.dropdown > a');
+      dropdownLinks.forEach(link => {
+        const dropdownMenu = link.nextElementSibling;
+        if (dropdownMenu && dropdownMenu.tagName === 'UL') {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownMenu.style.display = (dropdownMenu.style.display === 'flex') ? 'none' : 'flex';
+          });
+        } else {
+          console.error('Dropdown menu not found or improperly structured.');
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li class="dropdown">
+        <a href="#resources">Resources</a>
+        <ul>
+          <li><a href="#resources">Frequent Questions</a></li>
+          <li><a href="#resources">Service Areas</a></li>
+          <li><a href="#resources">Certifications</a></li>
+          <li class="separator"></li>
+          <li><a href="#resources">Make A Payment</a></li>
+          <li><a href="#resources">Leave a Review</a></li>
+          <li><a href="#resources">Tip Your Stylist</a></li>
+          <li><a href="#resources">Google Reviews</a></li>
+        </ul>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#book" class="book">Book Appointment</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Amazing Braids</h1>
+    <p>Where creativity meets style</p>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Amazing Braids</h2>
+      <p>At Amazing Braids, we believe in the art of braiding. Our team of experienced stylists brings years of expertise to every appointment, ensuring that each braid is a masterpiece. From classic styles to intricate designs, we specialize in transforming your hair into a work of art.</p>
+    </section>
+
+    <section id="pricing">
+      <h2>Pricing</h2>
+      <p>Our pricing is competitive and transparent. We offer a range of services, from simple braids to complex styles. Contact us for a full price list and personalized quote.</p>
+    </section>
+
+    <section id="portfolio">
+      <h2>Our Portfolio</h2>
+      <p>Explore our portfolio to see the latest styles, creative designs, and happy clients. Every braid tells a story, and we can't wait to share it with you.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Ready to get started? Contact us today to schedule your appointment. We look forward to helping you achieve your perfect look!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Amazing Braids. All rights reserved.</p>
+  </footer>
+</body>
+</html>
