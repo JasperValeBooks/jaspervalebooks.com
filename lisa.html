@@ -132,6 +132,17 @@
       flex: 1 1 calc(12% - 20px);
       box-sizing: border-box;
     }
+    @media (max-width: 1024px) {
+  .package {
+    flex: 1 1 calc(50% - 20px); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .package {
+    flex: 1 1 100%; /* 1 per row on mobile */
+  }
+}
         .package:nth-child(1) {
       background-color: #fde2e4;
     }
