@@ -155,9 +155,11 @@
     }
     nav li ul li:nth-child(1) a::before { content: '❓ '; }
     nav li ul li:nth-child(2) a::before { content: '📍 '; }
-    nav li ul li:nth-child(4) a::before { content: '💳 '; }
-    nav li ul li:nth-child(5) a::before { content: '✍️ '; }
-    nav li ul li:nth-child(6) a::before { content: '⭐ '; }
+    nav li ul li:nth-child(3) a::before { content: '📜 '; }
+    nav li ul li:nth-child(5) a::before { content: '💳 '; }
+    nav li ul li:nth-child(6) a::before { content: '✍️ '; }
+    nav li ul li:nth-child(7) a::before { content: '💁 '; }
+    nav li ul li:nth-child(8) a::before { content: '⭐ '; }
       .book-btn {
     background-color: #007bff;
     border-radius: 4px;
@@ -210,12 +212,14 @@
       <li><a href="#portfolio">Portfolio</a></li>
       <li class="dropdown">
         <a href="#resources">Resources</a>
-       <ul>
+        <ul>
           <li><a href="#resources">Frequent Questions</a></li>
           <li><a href="#resources">Service Areas</a></li>
+          <li><a href="#resources">Certifications</a></li>
           <li class="separator"></li>
           <li><a href="#resources">Make A Payment</a></li>
           <li><a href="#resources">Leave a Review</a></li>
+          <li><a href="#resources">Tip Your Stylist</a></li>
           <li><a href="#resources">Google Reviews</a></li>
         </ul>
       </li>
@@ -299,10 +303,51 @@
     <button class="book-btn" onclick="window.location.href='#book'">Book Sharon</button>
     </section>
 
-  <section id="contact" style="background-color: #FFDAB9; padding: 60px; border-radius: 8px;">
-      <h2>Contact Us</h2>
-      <p>Ready to get started? Contact us today to schedule your appointment. We look forward to helping you achieve your perfect look!</p>
-    </section>
+<section id="contact" style="background-color: #2d3142; color: white; padding: 60px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; border-radius: 8px;">
+  <!-- Left: Contact Info -->
+  <div style="flex: 1 1 300px;">
+    <img src="https://i.imgur.com/qaBc5FO.png" alt="Amazing Braids Logo" style="max-width: 150px; margin-bottom: 20px;">
+    <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Amazing Braids</h3>
+    <p><strong>Address:</strong> 123 Braid Lane, Charlotte, NC</p>
+    <p><strong>Phone:</strong> (704) 555-0123</p>
+    <p><strong>Email:</strong> contact@amazingbraids.com</p>
+    <div style="margin-top: 20px;">
+      <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"/></a>
+      <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"/></a>
+      <a href="#"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube"/></a>
+      <a href="#"><img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/></a>
+    </div>
+  </div>
+
+  <!-- Middle: Quick Links -->
+  <div style="flex: 1 1 300px;">
+    <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Quick Links</h3>
+    <ul style="list-style: none; padding: 0; line-height: 2;">
+      <li><a href="#about" style="color: white; text-decoration: none;">About Us</a></li>
+      <li><a href="#pricing" style="color: white; text-decoration: none;">Pricing Packages</a></li>
+      <li><a href="#portfolio" style="color: white; text-decoration: none;">Client Portfolio</a></li>
+      <li><a href="#resources" style="color: white; text-decoration: none;">Frequent Questions</a></li>
+      <li><a href="#resources" style="color: white; text-decoration: none;">Service Areas</a></li>
+      
+    </ul>
+  </div>
+
+  <!-- Right: Business Hours -->
+  <div style="flex: 1 1 300px;">
+    <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Business Hours</h3>
+    <p><strong>Monday:</strong> 6:00PM - 10:00PM</p>
+    <p><strong>Tuesday:</strong> Closed</p>
+    <p><strong>Wednesday - Friday:</strong> 6:00PM - 10:00PM</p>
+    <p><strong>Saturday:</strong> 2:00PM - 6:00PM</p>
+    <p><strong>Sunday:</strong> 2:00PM - 5:00PM</p>
+    <div style="margin-top: 20px;">
+      <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" alt="MasterCard"/>
+      <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa"/>
+      <img src="https://img.icons8.com/color/48/000000/amex.png" alt="Amex"/>
+      <img src="https://img.icons8.com/color/48/000000/discover.png" alt="Discover"/>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer>
