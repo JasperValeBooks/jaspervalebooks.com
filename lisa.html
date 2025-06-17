@@ -72,6 +72,9 @@
       padding: 0;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      width: 100%;
     }
     nav li {
       position: relative;
@@ -87,9 +90,12 @@
     nav a.book {
       background-color: #007bff;
       border-radius: 4px;
-      margin-left: 10px;
+      margin: 10px auto;
       color: white;
-      margin-right: 50px;
+      text-align: center;
+      display: block;
+      width: fit-content;
+      padding: 10px 20px;
     }
     nav a:hover {
       background-color: rgba(0,0,0,0.05);
@@ -226,9 +232,11 @@
     width: 100%;
     position: absolute;
     top: 60px;
-    right: 0;
+    left: 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 999;
+    text-align: center;
+    align-items: center;
   }
   nav ul.show {
     display: flex;
