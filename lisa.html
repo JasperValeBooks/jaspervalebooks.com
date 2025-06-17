@@ -139,7 +139,40 @@
     nav li:hover ul {
       display: flex;
     }
+<style>
+    .package-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 50px 0;
+    }
 
+    .package {
+      flex: 1 1 250px;
+      max-width: 300px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .bronze { background-color: #CD7F32; color:black;}
+    .silver { background-color: #C0C0C0; color:black;}
+    .gold { background-color: #FFD700; color:black;}
+    .platinum { background-color: #E5E4E2; color:black;}
+    .diamond { background-color: #b9f2ff; color:black;}
+    .senior { background-color: #c4aead; color:black;}
+    .addon { background-color: white; color:black;}
+
+    @media (max-width: 768px) {
+      .package-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+</style>
     /* Responsive Layout */
     @media (max-width: 768px) {
       .menu-toggle {
@@ -255,37 +288,37 @@
 <section id="pricing" style="background-color: #f0f9f0; padding: 60px; border-radius: 8px; margin-bottom: 50px;">
   <h2>Service Packages</h2>
   <div class="package-container">
-    <div class="package">
+    <div class="package bronze">
       <h3>🥉 Bronze Package – $60</h3>
       <p>✅ 2–4 Feed-Ins<br>✅ Cornrows (basic)<br>✅ Braid Downs (prep for wigs/weaves)<br>✅ Shampoo + Dry Oil Scalp<br>❌ Freestyle Braids<br>❌ Twists (basic and medium-sized)<br>❌ Box Braids<br>❌ Knotless Braids<br>❌ Kinky Twists<br>❌ Updos (special occasions)<br>❌ Protective Styles (layered or detailed)<br>❌ Re-Twist Locs<br>❌ Tribal Braids (simple or detailed)<br>❌ Juicy Twists<br>❌ Kinky & Juicy Combo<br>❌ Crochet Styles<br>❌ Sew-Ins<br>❌ Braid Accessories Add-On<br>❌ Edge Styling<br>❌ Braid Touch-Ups</p>
       <button class="book-btn" onclick="window.location.href='#book'">Book Appointment</button>
     </div>
-    <div class="package">
+    <div class="package silver">
       <h3>🥈 Silver Package – $100</h3>
       <p>✅ 2–4 Feed-Ins<br>✅ Cornrows (basic)<br>✅ Braid Downs (prep for wigs/weaves)<br>✅ Shampoo + Dry Oil Scalp<br>✅ Freestyle Braids (simple)<br>✅ Twists (basic and medium-sized)<br>✅ Box Braids (short–medium)<br>✅ Kinky Twists<br>✅ Protective Styles (basic)<br>✅ Re-Twist Locs<br>❌ Knotless Braids<br>❌ Updos (special occasions)<br>❌ Tribal Braids (simple or detailed)<br>❌ Juicy Twists<br>❌ Kinky & Juicy Combo<br>❌ Crochet Styles<br>❌ Sew-Ins<br>❌ Braid Accessories Add-On<br>❌ Edge Styling<br>❌ Braid Touch-Ups</p>
       <button class="book-btn" onclick="window.location.href='#book'">Book Appointment</button>
     </div>
-    <div class="package">
+    <div class="package gold">
       <h3>🥇 Gold Package – $160</h3>
       <p>✅ 2–4 Feed-Ins<br>✅ Cornrows (basic)<br>✅ Braid Downs (prep for wigs/weaves)<br>✅ Shampoo + Dry Oil Scalp<br>✅ Freestyle Braids (simple or detailed)<br>✅ Twists (basic and medium-sized)<br>✅ Box Braids (short–medium)<br>✅ Kinky Twists<br>✅ Protective Styles (layered and detailed)<br>✅ Re-Twist Locs<br>✅ Knotless Braids (short–medium)<br>✅ Updos (special occasions)<br>✅ Tribal Braids (simple designs)<br>✅ Juicy Twists<br>✅ Kinky & Juicy Combo<br>✅ Crochet Styles (short–medium)<br>❌ Sew-Ins<br>❌ Braid Accessories Add-On<br>❌ Edge Styling<br>❌ Braid Touch-Ups</p>
       <button class="book-btn" onclick="window.location.href='#book'">Book Appointment</button>
     </div>
-    <div class="package">
+    <div class="package platinum">
       <h3>💎 Platinum Package – $220</h3>
       <p>✅ 2–4 Feed-Ins<br>✅ Cornrows (basic)<br>✅ Braid Downs (prep for wigs/weaves)<br>✅ Shampoo + Dry Oil Scalp<br>✅ Freestyle Braids (detailed)<br>✅ Twists (basic and medium-sized)<br>✅ Box Braids (short–medium)<br>✅ Kinky Twists<br>✅ Protective Styles (layered and detailed)<br>✅ Re-Twist Locs<br>✅ Knotless Braids (short–medium)<br>✅ Updos (special occasions)<br>✅ Tribal Braids (detailed)<br>✅ Juicy Twists<br>✅ Kinky & Juicy Combo<br>✅ Crochet Styles (full head)<br>✅ Sew-Ins (partial, minimal leave-out)<br>✅ Braid Accessories Add-On<br>✅ Edge Styling<br>✅ Braid Touch-Ups</p>
       <button class="book-btn" onclick="window.location.href='#book'">Book Appointment</button>
     </div>
-    <div class="package">
+    <div class="package diamond">
       <h3>💎 Diamond Package – $320</h3>
       <p>✅ 2–4 Feed-Ins<br>✅ Cornrows (basic)<br>✅ Braid Downs (prep for wigs/weaves)<br>✅ Shampoo + Dry Oil Scalp<br>✅ Freestyle Braids (custom, detailed)<br>✅ Twists (basic, medium, and custom)<br>✅ Box Braids (short–medium)<br>✅ Kinky Twists<br>✅ Protective Styles (layered and detailed)<br>✅ Re-Twist Locs<br>✅ Knotless Braids (short–long)<br>✅ Updos (formal and special occasions)<br>✅ Tribal Braids (detailed, culturally inspired)<br>✅ Juicy Twists<br>✅ Kinky & Juicy Combo<br>✅ Crochet Styles (full head)<br>✅ Sew-Ins (full or partial, with closure/frontal)<br>✅ Braid Accessories Add-On (premium)<br>✅ Edge Styling<br>✅ Braid Touch-Ups</p>
       <button class="book-btn" onclick="window.location.href='#book'">Book Appointment</button>
     </div>
-    <div class="package">
+    <div class="package senior">
       <h3>65+ Senior Package – $65</h3>
       <p>✅ Simple Styles<br>✅ Wash and Dry<br>✅ Scalp Massage<br>✅ Shampoo + Dry Oil Scalp<br>✅ Freestyle Braids (custom, detailed)<br>✅ Twists (basic, medium, and custom)<br>✅ Braid Touch-Ups <br>❌ Box Braids (short–medium)<br>❌ Kinky Twists<br>❌ Protective Styles (layered and detailed)<br>❌ Re-Twist Locs<br>❌ Knotless Braids (short–long)<br>❌ Updos (formal and special occasions)<br>❌ Tribal Braids (detailed, culturally inspired)<br>❌ Juicy Twists<br>❌ Kinky & Juicy Combo<br>❌ Crochet Styles (full head)<br>❌ Sew-Ins (full or partial, with closure/frontal)<br>❌ Braid Accessories Add-On (premium)<br>❌ Edge Styling</p>
       <button class="book-btn" onclick="window.location.href='#book'">Book Appointment</button>
     </div>
-        <div class="package">
+        <div class="package addon">
       <h3>Glorious Add-on's – Ask About Me</h3>
       <p>✅ placeholder<br>✅ placeholder<br>✅ plcaeholder<br>✅ placeholder<br>✅ placeholder<br>✅ placeholder<br>✅ placeholder <br>❌ placeholder<br>❌ placeholder<br>❌ placeholder<br>❌ placeholder<br>❌ placeholder<br>❌ placeholder<br>❌ placeholder<br>❌ placeholder<br>❌ placeholder<br>❌ placeholder<br>❌ placeholder<br>❌ placeholder<br>❌ placeholder</p>
       <button class="book-btn" onclick="window.location.href='#book'">Book Appointment</button>
