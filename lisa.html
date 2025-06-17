@@ -224,35 +224,40 @@
   border-radius: 2px;
 }
 
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: white;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 999;
-    text-align: center;
-    align-items: center;
-  }
-  nav ul.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-  nav a.book {
-    margin: 10px;
-  }
-  .package-container {
-    flex-direction: column;
-  }
-}
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 999;
+        text-align: center;
+        align-items: center;
+        padding: 20px 0;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      nav ul li a {
+        font-size: 18px;
+        padding: 15px 0;
+        width: 100%;
+        display: block;
+      }
+      nav a.book {
+        margin: 10px;
+        font-size: 18px;
+      }
+      .package-container {
+        flex-direction: column;
+      }
+    }
 </style>
-  <script>
+   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const dropdownLinks = document.querySelectorAll('nav li.dropdown > a');
       dropdownLinks.forEach(link => {
@@ -452,4 +457,4 @@
     <p>&copy; 2025 Amazing Braids. All rights reserved. </p>
   </footer>
 </body>
-</html>
+</html> 
