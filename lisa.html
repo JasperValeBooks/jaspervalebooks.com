@@ -199,6 +199,47 @@
     max-width: 100%;
   }
 }
+/* Hamburger menu styles */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: auto;
+}
+.menu-toggle span {
+  background: #999;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  nav a.book {
+    margin: 10px;
+  }
+  .package-container {
+    flex-direction: column;
+  }
+}
 </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -215,10 +256,19 @@
         }
       });
     });
-  </script>
+  function toggleMenu() {
+  const navMenu = document.querySelector('nav ul');
+  navMenu.classList.toggle('show');
+}
+</script>
 </head>
 <body>
   <nav>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#pricing">Pricing</a></li>
