@@ -6,16 +6,14 @@
   <title>Amazing Braids</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
   <style>
+    /* General Styles */
     body {
-  
       margin: 0;
       font-family: 'Open Sans', sans-serif;
       color: #333;
       background: url('https://i.imgur.com/odjCFsI.png') center/cover no-repeat;
-      
-    
-  overflow-x: hidden;
-}
+      overflow-x: hidden;
+    }
 
     header {
       height: 100vh;
@@ -28,7 +26,6 @@
       width: 100%;
       font-family: 'Playfair Display', serif;
       background-size: cover;
-      
     }
     header h1 {
       font-family: 'Playfair Display', serif;
@@ -40,41 +37,50 @@
     }
 
     main {
-      
       padding: 10px;
       border-radius: 50px;
-      
       margin: 100px auto;
     }
 
+    /* Navigation Bar */
     nav {
-  
       position: fixed;
       top: 0;
       width: 100%;
       background: white;
       color: #999;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
       height: 60px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
       z-index: 1000;
-      padding-right: 20px;
+      padding: 0 20px;
       font-family: 'Roboto', sans-serif;
-    
-  flex-wrap: wrap;
-  padding: 10px 20px;
-}
+      flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      background: #999;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
     nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
       justify-content: flex-end;
-      width: 100%;
+      width: auto;
     }
     nav li {
       position: relative;
@@ -90,17 +96,11 @@
     nav a.book {
       background-color: #007bff;
       border-radius: 4px;
-      margin: 10px auto;
+      margin-left: 15px;
       color: white;
       text-align: center;
-      display: block;
-      width: fit-content;
       padding: 10px 20px;
     }
-    nav a:hover {
-      background-color: rgba(0,0,0,0.05);
-    }
-
     nav li ul {
       position: absolute;
       top: 60px;
@@ -124,51 +124,9 @@
       color: #666;
       white-space: nowrap;
       display: block;
-      border-bottom: none;
     }
     nav li ul li a::before {
       margin-right: 5px;
-    }
-        .package-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-      section h2 {
-      text-align: center;
-      font-size: 8vw;
-    }
-
-    .package {
-  background-color: white;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  flex: 1 1 calc(33.333% - 20px);
-  box-sizing: border-box;
-  max-width: calc(33.333% - 20px);
-}
-        .package:nth-child(1) {
-      background-color: #fde2e4;
-    }
-    .package:nth-child(2) {
-      background-color: #ffc9de;
-    }
-    .package:nth-child(3) {
-      background-color: #ffe0ac;
-    }
-    .package:nth-child(4) {
-      background-color: #d9f6d6;
-    }
-    .package:nth-child(5) {
-      background-color: #d0e1f9;
-    }
-
-    .package h3 {
-      margin-top: 0;
-      color: #007bff;
-      text-align: center;
     }
     nav li ul li:nth-child(1) a::before { content: '❓ '; }
     nav li ul li:nth-child(2) a::before { content: '📍 '; }
@@ -177,67 +135,27 @@
     nav li ul li:nth-child(6) a::before { content: '✍️ '; }
     nav li ul li:nth-child(7) a::before { content: '💁 '; }
     nav li ul li:nth-child(8) a::before { content: '⭐ '; }
-      .book-btn {
-    background-color: #007bff;
-    border-radius: 4px;
-    color: white;
-    padding: 10px 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    border: none;
-    margin: 10px auto 0 auto;
-    text-align: center;
-  }
-  .book-btn:hover {
-    background-color: rgba(0,0,0,0.05);
-  }
-  .book-btn {
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-}
 
-  
-  @media (max-width: 768px) {
-  .package {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-/* Hamburger menu styles */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  padding: 10px;
-  margin-left: auto;
-}
-.menu-toggle span {
-  background: #999;
-  height: 3px;
-  width: 25px;
-  margin: 4px 0;
-  border-radius: 2px;
-}
+    nav li:hover ul {
+      display: flex;
+    }
 
+    /* Responsive Layout */
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
       nav ul {
         display: none;
         flex-direction: column;
-        background-color: white;
         width: 100%;
         position: absolute;
         top: 60px;
         left: 0;
+        background: white;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         z-index: 999;
         text-align: center;
-        align-items: center;
-        padding: 20px 0;
       }
       nav ul.show {
         display: flex;
@@ -246,32 +164,14 @@
         font-size: 18px;
         padding: 15px 0;
         width: 100%;
-        display: block;
       }
       nav a.book {
-        margin: 10px;
-        font-size: 18px;
-      }
-      .package-container {
-        flex-direction: column;
+        display: block;
+        margin: 10px auto;
       }
     }
-</style>
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const dropdownLinks = document.querySelectorAll('nav li.dropdown > a');
-      dropdownLinks.forEach(link => {
-        const dropdownMenu = link.nextElementSibling;
-        if (dropdownMenu && dropdownMenu.tagName === 'UL') {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            dropdownMenu.style.display = (dropdownMenu.style.display === 'flex') ? 'none' : 'flex';
-          });
-        } else {
-          console.error('Dropdown menu not found or improperly structured.');
-        }
-      });
-    });
+  </style>
+  <script>
     function toggleMenu() {
       const navMenu = document.querySelector('nav ul');
       navMenu.classList.toggle('show');
@@ -280,11 +180,11 @@
 </head>
 <body>
   <nav>
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#pricing">Pricing</a></li>
