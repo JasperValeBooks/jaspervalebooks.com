@@ -83,7 +83,7 @@
       width: auto;
     }
     nav li {
-      position: relative;
+      position: relative; 
     }
     nav a {
       color: #999;
@@ -178,6 +178,39 @@
     .diamond { background-color: #b9f2ff; color: black; }
     .senior { background-color: #c4aead; }
     .addon { background-color: white; color: black; }
+@media (max-width: 768px) {
+  #contact {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  #contact > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+#about h2 {
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
+  color: #222;
+}
+
+#about p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  #about h2 {
+    font-size: 40px !important;
+  }
+
+  #about div {
+    padding: 20px 25px !important;
+    margin: 15px 0 !important;
+  }
+}
 
     @media (max-width: 768px) {
       .package-container {
@@ -213,20 +246,9 @@
       nav a.book {
         display: block;
         margin: 10px auto;
-      }
-      .book-btn {
-  display: block;
-  margin: 20px auto;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
 }
 
+      }
     }
   </style>
   <script>
@@ -273,8 +295,8 @@
 
   <main>
  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-<section id="about" style="background-color: #B0E0E6; padding: 60px; border-radius: 8px; margin-bottom: 50px; font-family: 'Open Sans', sans-serif;">
-  <h2 style="font-family: 'Playfair Display', serif;">About Amazing Braids</h2>
+<section id="about" style="background-color: #B0E0E6; padding: 60px; border-radius: 8px; margin-bottom: 50px; font-family: 'Open Sans', sans-serif; text-align: center;">
+  <h2 style="font-family: 'Playfair Display', serif; font-size: 65px;">About Amazing Braids</h2>
   <div style="background: white; padding: 40px 60px; margin: 20px 0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
     <p>Amazing Braids is more than just a braiding studio—it’s a community-centered haven where every client feels like family. Founded on the belief that beauty is for everyone, Amazing Braids goes beyond the chair to reach into the heart of the community. From offering creative braid styles and protective hair care to providing a listening ear and a warm smile, the studio’s mission is to empower individuals through hair artistry and human connection. Special emphasis is placed on serving the elderly population, ensuring that seniors receive the same level of care and attention, whether they need simple cornrows for comfort or intricate styles for special occasions.</p>
   </div>
@@ -284,8 +306,8 @@
 </section>
   
     
-<section id="mission" style="background-color: #F5F5DC; padding: 60px; border-radius: 8px; margin-bottom: 50px; font-family: 'Open Sans', sans-serif;">
-  <h2 style="font-family: 'Playfair Display', serif;">Our Mission</h2>
+<section id="mission" style="background-color: #F5F5DC; padding: 60px; border-radius: 8px; margin-bottom: 50px; font-family: 'Open Sans', sans-serif; text-align: center;">
+  <h2 style="font-family: 'Playfair Display', serif; font-size: 65px;">Our Mission</h2>
   <div style="background: white; padding: 40px 60px; margin: 20px 0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
     <p>Our mission is to celebrate and enhance the natural beauty of every client. We strive to offer top-tier braiding services in a warm, welcoming environment while fostering empowerment, self-expression, and cultural pride through every strand we touch.</p>
     </div>
@@ -294,8 +316,8 @@
   </div>
 </section>
 
-<section id="core-values" style="background-color: #E6E6FA; padding: 60px; border-radius: 8px; margin-bottom: 50px; font-family: 'Open Sans', sans-serif;">
-  <h2 style="font-family: 'Playfair Display', serif;">Core Values & Principles</h2>
+<section id="core-values" style="background-color: #E6E6FA; padding: 60px; border-radius: 8px; margin-bottom: 50px; font-family: 'Open Sans', sans-serif; text-align: center;">
+  <h2 style="font-family: 'Playfair Display', serif; font-size: 65px;">Core Values & Principles</h2>
   <div style="background: white; padding: 40px 60px; margin: 20px 0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
     <p><strong>Integrity:</strong> We hold ourselves to the highest standards in our craft and our interactions. Honesty, transparency, and doing right by our clients is at the core of every braid and every conversation.</p>
     <p><strong>Community:</strong> We are rooted in and serve our local neighborhoods, with an emphasis on inclusivity and service to all. Our shop is a place where cultures are honored, traditions are shared, and everyone is welcome regardless of background or age.</p>
@@ -310,8 +332,8 @@
   </div>
     
 </section>
-<section id="pricing" style="background-color: #f0f9f0; padding: 60px; border-radius: 8px; margin-bottom: 50px;">
-  <h2>Service Packages</h2>
+<section id="pricing" style="background-color: #f0f9f0; padding: 60px; border-radius: 8px; margin-bottom: 50px; font-family: 'Open Sans', sans-serif;">
+  <h2 style="font-family: 'Playfair Display', serif; text-align: center; font-size: 65px;">Service Packages</h2>
   <div class="package-container">
     <div class="package bronze">
       <h3>🥉 Bronze Package – $60</h3>
@@ -351,8 +373,8 @@
   </div>
 </section>
 
-  <section id="stylists" style="background-color: #D2B48C; padding: 60px; border-radius: 8px; margin-bottom: 50px;">
-      <h2>Our Stylists</h2>
+  <section id="stylists" style="background-color: #D2B48C; padding: 60px; border-radius: 8px; margin-bottom: 50px; font-family: 'Open Sans', sans-serif; text-align: center; font-size: 65px;">
+      <h2 style="font-family: 'Playfair Display', serif;">Our Stylists</h2>
       <p></p>
     <h3 style="text-align: center; font-size: 50px; color: #333;">Jessica</h3>
     <img src="https://i.imgur.com/qaBc5FO.png" alt="Our Stylists" style="width: 100%; max-width: 600px; display: block; margin: 20px auto; border-radius: 8px;">
@@ -364,7 +386,8 @@
     <button class="book-btn" onclick="window.location.href='#book'">Book Sharon</button>
     </section>
 
-<section id="contact" style="background-color: #2d3142; color: white; padding: 60px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; border-radius: 8px;; flex-direction: column; align-items: center; text-align: center;">
+<section id="contact" style="background-color: #2d3142; color: white; padding: 60px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; border-radius: 8px; flex-direction: row; align-items: flex-start; text-align: left;">
+
   <!-- Left: Contact Info -->
   <div style="flex: 1 1 300px;">
     <img src="https://i.imgur.com/qaBc5FO.png" alt="Amazing Braids Logo" style="max-width: 150px; margin-bottom: 20px;">
