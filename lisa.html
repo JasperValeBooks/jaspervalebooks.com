@@ -179,14 +179,20 @@
 
 /* Hamburger bars */
 .menu-toggle span {
-  background: #333;
-  height: 4px;
+  background: #222;
+  height: 3px;
   width: 30px;
-  margin: 5px 0;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 15px;
+}
 /* Dropdown menu items on mobile */
 @media (max-width: 768px) {
   nav ul {
