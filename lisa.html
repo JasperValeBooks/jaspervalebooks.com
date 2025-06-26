@@ -153,6 +153,41 @@
   nav ul li a:hover {
     background: #f0f0f0;
   }
+     .faq-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      padding: 15px 20px;
+      background: #f7f7f7;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 15px 20px;
+      font-size: 16px;
+      line-height: 1.6;
+      background: #fff;
+      color: #444;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
     /* Service Packages */
     .package-container {
       display: flex;
@@ -417,6 +452,17 @@
       const navMenu = document.querySelector('nav ul');
       navMenu.classList.toggle('show');
     }
+  </script>
+      <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const items = document.querySelectorAll(".faq-question");
+      items.forEach(item => {
+        item.addEventListener("click", () => {
+          const parent = item.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+    });
   </script>
 </head>
 <body>
