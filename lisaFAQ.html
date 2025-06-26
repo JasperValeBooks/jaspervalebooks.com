@@ -208,7 +208,40 @@
   nav ul.show {
     display: flex;
   }
+    .faq-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
 
+    .faq-item {
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      padding: 15px 20px;
+      background: #f7f7f7;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 15px 20px;
+      font-size: 16px;
+      line-height: 1.6;
+      background: #fff;
+      color: #444;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
   nav ul li a {
     font-size: 18px;
     padding: 15px 20px;
@@ -405,6 +438,17 @@
       navMenu.classList.toggle('show');
     }
   </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const items = document.querySelectorAll(".faq-question");
+      items.forEach(item => {
+        item.addEventListener("click", () => {
+          const parent = item.parentElement;
+          parent.classList.toggle("active");
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <nav>
@@ -439,26 +483,106 @@
     <h1>Frequently Asked Questions</h1>
    
   </header>
-<section id="portfolio" text-align: center; padding: 60px; border-radius: 8px; margin-bottom: 50px; font-family: 'Open Sans', sans-serif; text-align: center;">
- 
-  <p style="font-size: 18px; max-width: 800px; margin: 0 auto 40px; color: #fff; text-shadow: 1px 1px 2px #000;">Take a look at some of our most loved braid styles, from elegant protective designs to bold freestyle statements. Every braid is a masterpiece crafted with care, creativity, and cultural pride.</p>
+  <section class="faq-section">
+    <h2 style="text-align:center; font-family: 'Playfair Display', serif;">Frequently Asked Questions</h2>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-    <div style="flex: 1 1 300px; max-width: 300px;">
-      <img src="https://i.imgur.com/ZxCnvC3.png" alt="Style 1" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <p style="margin-top: 10px; font-weight: bold; color: #fff; text-shadow: 1px 1px 2px #000;">Goddess Locs</p>
+    <div class="faq-item">
+      <div class="faq-question">1. What services do you offer?</div>
+      <div class="faq-answer">We specialize in a range of services including braiding, natural hair care, protective styles, loc maintenance, sew-ins, twist-outs, silk presses, and hair treatments. We also offer scalp care, extension removal, and custom styling.</div>
     </div>
-    <div style="flex: 1 1 300px; max-width: 300px;">
-      <img src="https://i.imgur.com/ZxCnvC3.png" alt="Style 2" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <p style="margin-top: 10px; font-weight: bold; color: #fff; text-shadow: 1px 1px 2px #000;">Knotless Braids</p>
+
+    <div class="faq-item">
+      <div class="faq-question">2. Do I need to book an appointment in advance?</div>
+      <div class="faq-answer">Yes, we highly recommend booking an appointment in advance to ensure availability, especially for specialty styles. Walk-ins are welcome when time allows but are not guaranteed.</div>
     </div>
-    <div style="flex: 1 1 300px; max-width: 300px;">
-      <img src="https://i.imgur.com/ZxCnvC3.png" alt="Style 3" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <p style="margin-top: 10px; font-weight: bold; color: #fff; text-shadow: 1px 1px 2px #000;">Tribal Feed-Ins</p>
+
+    <div class="faq-item">
+      <div class="faq-question">3. How early should I arrive for my appointment?</div>
+      <div class="faq-answer">Please arrive at least 10–15 minutes early to allow time for check-in and consultation. Arriving late may result in a shortened service or rescheduling.</div>
     </div>
-    <div style="flex: 1 1 300px; max-width: 300px;">
-      <img src="https://i.imgur.com/ZxCnvC3.png" alt="Style 4" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <p style="margin-top: 10px; font-weight: bold; color: #fff; text-shadow: 1px 1px 2px #000;">Juicy Twists</p>
+
+    <div class="faq-item">
+      <div class="faq-question">4. What is your cancellation policy?</div>
+      <div class="faq-answer">We ask for at least 24 hours’ notice for cancellations. Same-day cancellations or no-shows may result in a cancellation fee or loss of deposit.</div>
     </div>
-  </div>
-</section>
+
+    <div class="faq-item">
+      <div class="faq-question">5. Do you offer consultations?</div>
+      <div class="faq-answer">Absolutely! We offer free consultations for most services. This helps us assess your hair health, discuss your goals, and recommend the best styles or treatments.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">6. What should I do before my appointment?</div>
+      <div class="faq-answer">Please arrive with detangled, clean hair unless the service includes a shampoo. For braid or twist styles, hair must be free of product build-up or heavy oils unless otherwise specified.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">7. Do you style children’s hair?</div>
+      <div class="faq-answer">Yes, we offer child-friendly services for kids age 5 and up. Please let us know when booking so we can match your child with a stylist who works with younger clients.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">8. What kind of hair products do you use?</div>
+      <div class="faq-answer">We use natural and professional-grade products that are gentle, nourishing, and suited for all hair types. We also offer product recommendations for at-home care.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">9. Can I bring my own hair extensions?</div>
+      <div class="faq-answer">Yes! You're welcome to bring your own hair extensions. Just make sure they are the correct type and quantity. Let us know in advance if you need guidance on what to purchase.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">10. Do you accommodate clients with sensitive scalps or allergies?</div>
+      <div class="faq-answer">Yes, we take sensitivity and allergies seriously. Please let us know at the time of booking so we can adjust products and techniques accordingly.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">11. How long will my appointment take?</div>
+      <div class="faq-answer">The duration depends on the service. Basic services like trims or shampoo/style typically take 30–60 minutes, while braids, twists, or sew-ins can take 2–6 hours. We’ll give you an estimate when you book.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">12. Do you offer same-day or emergency appointments?</div>
+      <div class="faq-answer">We do our best to accommodate urgent bookings, but same-day availability depends on our schedule. It’s best to call or message early in the day to check.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">13. Do you require a deposit to book?</div>
+      <div class="faq-answer">Yes, a non-refundable deposit is typically required for most appointments. This secures your spot and goes toward your final payment.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">14. What forms of payment do you accept?</div>
+      <div class="faq-answer">We accept cash, major credit/debit cards, Cash App, Zelle, and Apple Pay. Payment methods may vary by stylist, so feel free to ask when booking.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">15. Do you offer mobile or at-home services?</div>
+      <div class="faq-answer">In some cases, we offer mobile services for events or clients with special needs. This must be arranged in advance and may include a travel fee.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">16. Can I bring a guest or child to my appointment?</div>
+      <div class="faq-answer">To ensure a peaceful, professional environment, we ask that you come alone unless previously approved. Exceptions can be made for parents with children receiving services.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">17. How often should I get my hair styled or maintained?</div>
+      <div class="faq-answer">Protective styles should be refreshed every 4–8 weeks, depending on the style and hair growth. Regular trims and conditioning treatments every 6–8 weeks help maintain healthy hair.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">18. Do you offer bridal or special event styling?</div>
+      <div class="faq-answer">Yes! We offer bridal packages, updos, and group styling for weddings, photoshoots, and special occasions. Book a consultation to plan your look in advance.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">19. What happens if I’m not satisfied with my style?</div>
+      <div class="faq-answer">Client satisfaction is our priority. If you’re not happy, please let us know within 48 hours of your appointment so we can address any concerns or make adjustments.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">20. Do you sell hair products or accessories?</div>
+      <div class="faq-answer">Yes! We offer a curated selection of natural hair products, oils, edge control, bonnets, and styling tools in-salon and online. Ask your stylist for recommendations.</div>
+    </div>
+  </section>
