@@ -191,6 +191,17 @@
   padding: 10px;
   margin-right: 15px;
 }
+
+        @media (max-width: 768px) {
+  .dropdown {
+    max-height: 200px;         /* Limit height */
+    overflow-y: auto;          /* Scroll if too long */
+    font-size: 16px;           /* Slightly larger touch-friendly text */
+    padding: 10px;
+    width: 90vw;               /* Fit the screen better */
+    box-sizing: border-box;
+  }
+}
 /* Dropdown menu items on mobile */
 @media (max-width: 768px) {
   nav ul {
