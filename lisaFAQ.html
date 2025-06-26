@@ -200,7 +200,16 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
+    @media (max-width: 768px) {
+  .dropdown {
+    max-height: 200px;         /* Limit height */
+    overflow-y: auto;          /* Scroll if too long */
+    font-size: 16px;           /* Slightly larger touch-friendly text */
+    padding: 10px;
+    width: 90vw;               /* Fit the screen better */
+    box-sizing: border-box;
+  }
+}
 @media (max-width: 768px) {
   .content-box {
     padding: 20px 20px;
