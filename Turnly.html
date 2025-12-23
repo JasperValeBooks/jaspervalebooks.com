@@ -236,7 +236,13 @@
       main{padding-bottom:86px}
     }
 
-    @media (max-width: 520px){$1}
+    @media (max-width: 520px){
+      .tag{width:100%; justify-content:center; text-align:center}
+      .priceTop{flex-direction:column; gap:6px}
+      .price{font-size:26px}
+      .embedInner{padding:0 8px 12px}
+      .calendly-inline-widget{height:680px !important}
+    }
 </style>
 </head>
 <body>
@@ -316,7 +322,7 @@
       <div class="feature">
         <div class="icon">💳</div>
         <h3>Easy payment</h3>
-        <p>Pay immediately after booking via Square. Add‑ons (if needed) are billed separately with clear communication.</p>
+        <p>Pay immediately after booking via Stripe. Add‑ons (if needed) are billed separately with clear communication.</p>
       </div>
 
       <div class="feature" id="contact">
@@ -404,8 +410,8 @@
       </div>
       <div class="feature">
         <div class="icon">🧾</div>
-        <h3>Payments (Square)</h3>
-        <p>Pay by Square link (deposit or full) or request a Square invoice if you prefer a clean paper trail for your books.</p>
+        <h3>Payments (Stripe)</h3>
+        <p>Pay via Stripe Checkout (deposit or full). If add‑ons are needed after arrival, we’ll send a Stripe invoice with clear notes for your records.</p>
       </div>
     </div>
   </section>
@@ -413,7 +419,7 @@
   <section id="booking">
     <div class="sectionTitle">
       <h2>Book a cleaning</h2>
-      <div class="hint">Calendly booking below. Set your event confirmation to redirect guests to your Square checkout page right after booking.</div>
+      <div class="hint">Calendly booking below. After booking, you can redirect to Stripe Checkout so payment happens right away.</div>
     </div>
 
     <div class="bookingWrap">
@@ -436,8 +442,8 @@
         <div class="icon">💳</div>
         <h3>Pay immediately (and save for next time)</h3>
         <p>
-          After a host books, Calendly can <b>auto‑redirect</b> to your Square checkout page so payment happens right away.
-          If you use <b>Square Online</b> checkout, returning hosts can opt in to <b>Square Pay</b> / customer accounts for faster future payments.
+          After a host books, Calendly can <b>auto‑redirect</b> to your Stripe Checkout page so payment happens right away.
+          Returning hosts can use <b>Link by Stripe</b> (if enabled) for faster checkout next time.
         </p>
       </div>
     </div>
@@ -493,7 +499,7 @@
       <div class="feature">
         <div class="icon">🧾</div>
         <h3>How does payment work?</h3>
-        <p>Pay via Square link after booking or request a Square invoice. Repeat hosts often keep payment on file for faster checkouts.</p>
+        <p>After booking, you’ll be redirected to Stripe Checkout to pay immediately. If add‑ons are needed, we send a separate Stripe invoice with notes.</p>
       </div>
 
       <div class="feature">
