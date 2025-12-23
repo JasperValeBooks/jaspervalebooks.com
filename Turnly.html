@@ -25,6 +25,7 @@
     *{box-sizing:border-box}
     html,body{
       margin:0;
+      overflow-x:hidden;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--text);
       background:var(--bg);
@@ -35,7 +36,7 @@
     /* Full-screen splash with top image */
     .splash{
       min-height:100vh;
-      width:100vw;
+      width:100%;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -82,7 +83,21 @@
     .tag .dot{width:8px; height:8px; border-radius:99px; background:var(--accent);}
     h1{margin:14px 0 10px; font-size:42px; line-height:1.06; letter-spacing:-.6px}
     .lead{color:#0f172a; font-weight:400; font-size:16px; line-height:1.6; max-width:55ch}
-    .heroActions{display:flex; flex-wrap:wrap; gap:16px; margin-top:28px; justify-content:center}
+    .heroActions{display:flex; flex-wrap:wrap; gap:16px; margin-top:28px; justify-content:center; width:100%;}
+    .heroActions .btn{width:auto}
+
+    /* Desktop split CTA (Book now | See pricing) */
+    @media (min-width: 921px){
+      .heroActions{
+        max-width:560px;
+        margin-left:auto;
+        margin-right:auto;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:12px;
+      }
+      .heroActions .btn{width:100%}
+    }
 
     /* Buttons */
     .btn{
@@ -221,22 +236,8 @@
       main{padding-bottom:86px}
     }
 
-    @media (max-width: 520px){
-      .tag{width:100%; justify-content:center; text-align:center}
-      .priceTop{flex-direction:column; gap:6px}
-      .price{font-size:26px}
-      .embedInner{padding:0 8px 12px}
-      .calendly-inline-widget{height:680px !important}
-    }
-      h1{font-size:34px}
-      .grid3{grid-template-columns:1fr}
-      .grid2{grid-template-columns:1fr}
-      nav ul{display:none}
-      .cta{display:none}
-      .mobileBar{display:flex}
-      main{padding-bottom:84px}
-    }
-  </style>
+    @media (max-width: 520px){$1}
+</style>
 </head>
 <body>
 
