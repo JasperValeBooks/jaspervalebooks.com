@@ -207,17 +207,18 @@
     .mini a{color:var(--muted); text-decoration:none; font-weight:500}
     .mini a:hover{color:var(--text)}
 
-    /* Mobile sticky CTA */
+    /* Sticky CTA (mobile + desktop) */
     .mobileBar{
       position:fixed; left:0; right:0; bottom:0;
-      display:none;
+      display:flex; /* show on all viewports */
       padding:10px 12px;
       background:#ffffff;
       border-top:1px solid var(--border);
       z-index:60;
       gap:10px;
+      justify-content:center;
     }
-    .mobileBar .btn{flex:1}
+    .mobileBar .btn{flex:1; max-width:560px;}
 
     /* Responsive */
     @media (max-width: 920px){
