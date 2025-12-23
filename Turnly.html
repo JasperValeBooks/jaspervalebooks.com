@@ -211,14 +211,19 @@
     .mobileBar{
       position:fixed; left:0; right:0; bottom:0;
       display:flex; /* show on all viewports */
-      padding:10px 12px;
+      padding:0; /* full-width bar */
       background:#ffffff;
       border-top:1px solid var(--border);
       z-index:60;
-      gap:10px;
-      justify-content:center;
+      justify-content:stretch;
     }
-    .mobileBar .btn{flex:1; max-width:560px;}
+    .mobileBar .btn{
+      width:100%;
+      max-width:none; /* remove desktop cap */
+      border-radius:0; /* edge-to-edge look */
+      min-height:56px;
+      font-size:16px;
+    }
 
     /* Responsive */
     @media (max-width: 920px){
