@@ -2,556 +2,336 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Turnly | Airbnb & Short‑Term Rental Cleaning</title>
-  <meta name="description" content="Reliable Airbnb and short‑term rental cleaning with photo-ready turnovers, linen service, and easy scheduling." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Turnly | STR Turnover Cleaning</title>
+  <meta name="description" content="Turnly provides checklist-driven, photo-documented STR turnover cleaning for hosts and portfolio operators." />
 
+  <!-- External stylesheet (for real deployment) -->
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Inline stylesheet so preview renders correctly in edit mode -->
   <style>
     :root{
-      /* Ultra‑minimal with section contrast */
-      --bg:#eef2f6;              /* slightly darker page background */
-      --card:#ffffff;            /* card surfaces */
-      --section:#e5eaf0;         /* alternating section background */         /* alternating section background */
-      --text:#020617;
-      --muted:#334155;
-      --accent:#020617;
-      --border:rgba(2,6,23,.18);
-      --shadow:none;
-      --radius:12px;
-      --max:1120px;
-      --pad:22px;
-      font-synthesis-weight:none;
+      --bg:#0b0f17;
+      --card:#101827;
+      --muted:#a9b3c7;
+      --text:#eef2ff;
+      --border:rgba(255,255,255,.10);
+      --accent:#7c5cff;
+      --accent2:#22c55e;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --max:1100px;
     }
+
     *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      overflow-x:hidden;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--text);
-      background:var(--bg);
-    }
-    a{color:inherit}
-    .container{max-width:var(--max); margin:0 auto; padding:0 18px;}
-
-    /* Full-screen splash with top image */
-    .splash{
-      min-height:100vh;
-      width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background-image:url("https://i.imgur.com/CTqjYBu.png");
-      background-repeat:no-repeat;
-      background-position:center;
-      background-size:cover; /* full-page width & height */
-    }
-    
-    /* Page background */
     body{
-      background:var(--bg);
-    }
-    /* keep content above background */
-    main, footer, .mobileBar{position:relative; z-index:1;}
-
-    /* Hero */
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      padding:0;
-    }
-    .heroGrid{display:grid; grid-template-columns: 1fr; gap:18px; align-items:stretch}
-    .card{
-      background:#ffffff;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-    }
-    .heroMain{
-      padding:64px 48px;
-      position:relative;
-      overflow:hidden;
-      text-align:center;
-    }
-    .tag{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 12px; border-radius:999px;
-      border:1px solid var(--border);
-      background:#f8fafc;
-      color: var(--text);
-      font-weight:500; font-size:13px;
-    }
-    .tag .dot{width:8px; height:8px; border-radius:99px; background:var(--accent);}
-    h1{margin:14px 0 10px; font-size:42px; line-height:1.06; letter-spacing:-.6px}
-    .lead{color:#0f172a; font-weight:400; font-size:16px; line-height:1.6; max-width:55ch}
-    .heroActions{display:flex; flex-wrap:wrap; gap:16px; margin-top:28px; justify-content:center; width:100%;}
-    .heroActions .btn{width:auto}
-
-    /* Desktop split CTA (Book now | See pricing) */
-    @media (min-width: 921px){
-      .heroActions{
-        max-width:560px;
-        margin-left:auto;
-        margin-right:auto;
-        display:grid;
-        grid-template-columns: 1fr 1fr;
-        gap:12px;
-      }
-      .heroActions .btn{width:100%}
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(124,92,255,.20), transparent 60%),
+                  radial-gradient(900px 600px at 80% 20%, rgba(34,197,94,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
     }
 
-    /* Buttons */
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 40px}
+
+    /* Standard body section wrapper */
+    .section{
+      padding:48px 40px;
+    }
+
+    .section + .section{
+      padding-top:0;
+    }
+
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,23,.7);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:0}
+
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand-mark{
+      width:36px;height:36px;border-radius:12px;
+      display:grid;place-items:center;
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(34,197,94,.75));
+    }
+
+    .menu{display:flex;gap:14px;align-items:center}
+
+    .nav-link{
+      padding:10px 10px;
+      border-radius:10px;
+      color:rgba(238,242,255,.88);
+      font-weight:700;
+      background:transparent;
+      border:0;
+    }
+    .nav-link:hover{background:rgba(255,255,255,.06)}
+
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px 22px;
-      min-height:48px;
+      padding:12px 16px;
       border-radius:12px;
       border:1px solid var(--border);
-      background:#ffffff;
-      color:var(--text);
-      font-size:15px;
-      font-weight:500;
-      line-height:1;
-      text-decoration:none;
-      white-space:nowrap;
+      background:rgba(255,255,255,.05);
+      font-weight:700;
     }
-    .btn:hover{background:#f8fafc}
-    .btn.primary{
-      background:var(--accent);
-      color:#ffffff;
-      border-color:var(--accent);
+
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.7));
+      border-color: rgba(124,92,255,.6);
     }
-    .btn.primary:hover{filter:brightness(0.95)}
-    .heroMeta{display:flex; gap:16px; margin-top:20px; flex-wrap:wrap}
+
+    .hero{min-height:100vh;display:flex;align-items:center;padding:0}
+
+    h1{font-size:42px;line-height:1.15;margin:12px 0}
+    .lead{font-size:18px;color:rgba(238,242,255,.9);max-width:60ch}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .card{
+      background: rgba(16,24,39,.8);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:20px;
+    }
+
+    .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
     .pill{
-      display:flex; gap:10px; align-items:flex-start;
-      padding:12px 12px; border-radius:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
       border:1px solid var(--border);
-      background:#ffffff;
-      min-width: 220px;
-    }
-    .pill b{display:block; font-size:14px}
-    .pill span{display:block; color:#1e293b; font-weight:400; font-size:13px; margin-top:3px}
-
-    .heroSide{padding:22px; display:flex; flex-direction:column; gap:12px}
-    .stat{
-      padding:16px; border-radius:12px;
-      border:1px solid var(--border);
-      background:#ffffff;
-    }
-    .stat b{font-size:26px; letter-spacing:-.4px}
-    .stat span{display:block; color:#1e293b; font-weight:500; margin-top:6px}
-
-    /* Sections */
-    section{padding:40px 0}
-    section.alt{background:var(--section)}
-    .sectionTitle{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      margin-bottom:18px;
-      text-align:center;
-    }
-    h2{margin:0; font-size:22px; letter-spacing:-.2px; text-align:center}
-    .hint{color:#1e293b; font-weight:400; font-size:14px; line-height:1.5; text-align:center; max-width:70ch}
-
-    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
-    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
-
-    .feature{
-      padding:18px;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      background:#ffffff;
-    }
-    .feature h3{margin:8px 0 6px; font-size:16px; font-weight:600}
-    .feature p{margin:0; color:#1e293b; font-weight:400; line-height:1.55; font-size:14px}
-    .icon{
-      width:40px; height:40px; border-radius:10px;
-      background:#ffffff;
-      border:1px solid var(--border);
-      display:grid; place-items:center;
-      font-weight:600;
+      font-size:13px;
+      font-weight:700;
     }
 
-    /* Pricing */
-    .pricing{
-      padding:18px;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      background:#ffffff;
-    }
-    .priceTop{display:flex; justify-content:space-between; align-items:flex-start; gap:10px}
-    .plan{font-size:15px; font-weight:600}
-    .price{font-size:28px; font-weight:600}
-    .sub{color:var(--muted); font-weight:500; margin-top:3px}
-    .list{margin:12px 0 0; padding:0; list-style:none; display:grid; gap:8px}
-    .list li{display:flex; gap:10px; color:#1e293b; font-weight:400; font-size:14px; line-height:1.45}
-    .check{font-weight:600;width:18px; height:18px; border-radius:6px; border:1px solid var(--border); background:#f8fafc; display:grid; place-items:center; color:var(--accent)}
+    ul{padding-left:18px}
+    li{margin:6px 0}
 
-    /* Booking */
-    .bookingWrap{display:grid; grid-template-columns: 1fr; gap:14px}
-    .embed{padding:0; overflow:hidden}
-    .embedHeader{padding:18px 18px 0}
-    .embedHeader p{margin:6px 0 0; color:var(--muted); font-weight:400; line-height:1.6}
-    .embedInner{padding:0 12px 14px}
-
-    /* Footer */
-    footer{padding:26px 0 42px; border-top:1px solid var(--border); margin-top:20px}
-    .footGrid{display:grid; grid-template-columns: 1.2fr .8fr; gap:14px; align-items:start}
-    .footNote{color:var(--muted); font-weight:400; line-height:1.6}
-    .mini{display:grid; gap:10px}
-    .mini a{color:var(--muted); text-decoration:none; font-weight:500}
-    .mini a:hover{color:var(--text)}
-
-    /* Sticky CTA (mobile + desktop) */
-    .mobileBar{
-      position:fixed; left:0; right:0; bottom:0;
-      display:flex; /* show on all viewports */
-      padding:0; /* full-width bar */
-      background:#ffffff;
-      border-top:1px solid var(--border);
-      z-index:60;
-      justify-content:stretch;
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:34px}
     }
-    .mobileBar .btn{
-      width:100%;
-      max-width:none; /* remove desktop cap */
-      border-radius:0; /* edge-to-edge look */
-      min-height:56px;
-      font-size:16px;
-    }
-
-    /* Responsive */
-    @media (max-width: 920px){
-            .container{padding:0 14px}
-      .hero{padding:28px 0 16px}
-      .heroMain{padding:18px}
-      .heroSide{padding:16px}
-      h1{font-size:30px; line-height:1.1}
-      .lead{font-size:15px}
-      .heroActions{flex-direction:column; align-items:stretch}
-      .heroActions .btn{width:100%; padding:12px 14px}
-      .pill{min-width:unset; width:100%}
-      .grid3{grid-template-columns:1fr}
-      .grid2{grid-template-columns:1fr}
-            .mobileBar{display:flex}
-      main{padding-bottom:86px}
-    }
-
-    @media (max-width: 520px){
-      .tag{width:100%; justify-content:center; text-align:center}
-      .priceTop{flex-direction:column; gap:6px}
-      .price{font-size:26px}
-      .embedInner{padding:0 8px 12px}
-      .calendly-inline-widget{height:680px !important}
-    }
-</style>
+  </style>
 </head>
 <body>
 
-<!-- Mobile sticky booking bar (shows on small screens) -->
-<div class="mobileBar" role="region" aria-label="Quick actions">
-  <a class="btn primary" href="#booking">Book now</a>
-</div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#" aria-label="Turnly Home">
+      <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" style="height:56px;width:auto;display:block;" />
+    </a>
 
-
-
-<div class="splash" id="top"></div>
-
-<main class="container">
-  <div class="hero alt">
-    <div class="heroGrid">
-      <div class="card heroMain">
-        <!-- subtle availability note removed from hero to reduce clutter -->
-        <h1>Reliable, photo‑ready Airbnb turnovers — done right, every time.</h1>
-        <p class="lead">We specialize in <b>evening and weekend</b> short‑term rental turnovers. Book online, share access notes, and we’ll handle the reset so your next guest arrives to a clean, well‑staged space.</p>
-
-        <div class="heroActions" style="margin-top:22px;">
-          <a class="btn primary" href="#booking">Book now</a>
-          <a class="btn" href="#pricing">See pricing</a>
-          
-        </div>
-
-        <div class="hint" style="margin-top:12px;">Consistent checklist • Clear communication • Optional photo confirmation</div>
-      </div>
-    </div>
+    <nav class="menu" aria-label="Primary">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">Services</a>
+      <a href="#" class="nav-link">Contact</a>
+      <a href="#" class="btn btn-primary">Tell Us About Your Property</a>
+    </nav>
   </div>
+</header>
 
-  <section id="services" class="alt">
-    <div class="sectionTitle">
-      <h2>Services</h2>
-      <div class="hint">Designed for Airbnb, Vrbo, Furnished Finder, and mid‑term stays.</div>
-    </div>
+<main>
+  <!-- HERO SECTION (Above the Fold) -->
+  <section class="hero" style="position:relative;overflow:hidden;min-height:100vh;">
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:0;filter:brightness(.45);">
+      <source src="https://i.imgur.com/SIZaTQ0.mp4" type="video/mp4" />
+    </video>
 
-    <div class="grid3">
-      <div class="feature">
-        <div class="icon">🧼</div>
-        <h3>Standard turnover</h3>
-        <p>Full reset: bathrooms, kitchen, floors, surfaces, trash, staging, and final walkthrough.</p>
-      </div>
-      <div class="feature">
-        <div class="icon">🧺</div>
-        <h3>Linen service (optional)</h3>
-        <p>Wash/dry/fold and re‑make beds, towel refresh, and closet staging for that “hotel” look.</p>
-      </div>
-      <div class="feature">
-        <div class="icon">🧽</div>
-        <h3>Deep clean</h3>
-        <p>Baseboards, inside appliances (as quoted), detail dusting, build‑up removal, and spot treatment.</p>
-      </div>
+    <!-- Brand Name Overlay -->
+    <div style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;">
+      <h1 style="font-size:clamp(64px,12vw,140px);letter-spacing:2px;font-weight:900;margin:0;">Turnly</h1>
     </div>
   </section>
 
-  <section id="perks">
-    <div class="sectionTitle">
-      <h2>Why hosts book with us</h2>
-      <div class="hint">Simple booking, clear expectations, and a clean your guests notice.</div>
-    </div>
-
-    <div class="grid2">
-      <div class="feature">
-        <div class="icon">🕒</div>
-        <h3>Evenings + weekends</h3>
-        <p>We focus on evening and weekend turnovers, which fits common check‑out/check‑in patterns and weekend arrivals.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">⚡</div>
-        <h3>Book in 60 seconds</h3>
-        <p>Pick a time, add the address, and include access notes. You get a confirmation right away.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">💳</div>
-        <h3>Easy payment</h3>
-        <p>Pay immediately after booking via Stripe. Add‑ons (if needed) are billed separately with clear communication.</p>
-      </div>
-
-      <div class="feature" id="contact">
-        <div class="icon">📞</div>
-        <h3>Fast communication</h3>
-        <p>Text/call if there’s a tight turnover window or a guest issue. We’ll confirm what’s doable before you promise it.</p>
-        <p style="margin-top:10px; font-weight:500;">Phone/Text: <a href="tel:+1REPLACE_ME">(###) ###‑####</a> • Email: <a href="mailto:hello@REPLACE_ME.com">hello@REPLACE_ME.com</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section id="pricing" class="alt">
-
-    <div class="grid3">
-      <div class="pricing">
-        <div class="priceTop">
-          <div>
-            <div class="plan">Studio / 1BR</div>
-            <div class="sub">Standard Turnover clean</div>
-          </div>
-          <div class="price">$120</div>
-        </div>
-        <ul class="list">
-          <li><span class="check">✓</span>Kitchen reset (counters, sink, exterior appliances)</li>
-          <li><span class="check">✓</span>Bathroom sanitize + mirrors</li>
-          <li><span class="check">✓</span>Floors vacuum/mop (entire unit)</li>
-          <li><span class="check">✓</span>Trash out + quick staging walkthrough</li>
-        </ul>
-      </div>
-
-      <div class="pricing">
-        <div class="priceTop">
-          <div>
-            <div class="plan">2BR</div>
-            <div class="sub">Standard Turnover clean</div>
-          </div>
-          <div class="price">$160</div>
-        </div>
-        <ul class="list">
-          <li><span class="check">✓</span>All bedrooms refreshed (surfaces, mirrors, floors)</li>
-          <li><span class="check">✓</span>Both bathrooms deep-sanitized + restocked</li>
-          <li><span class="check">✓</span>Kitchen + living areas reset (touchpoints + floors)</li>
-          <li><span class="check">✓</span>Trash out + final walkthrough for missing items</li>
-        </ul>
-      </div>
-
-      <div class="pricing">
-        <div class="priceTop">
-          <div>
-            <div class="plan">3BR</div>
-            <div class="sub">Standard Turnover clean</div>
-          </div>
-          <div class="price">$200</div>
-        </div>
-        <ul class="list">
-          <li><span class="check">✓</span>Whole-home turnover reset (all rooms + touchpoints)</li>
-          <li><span class="check">✓</span>Multiple bathrooms sanitized + restocked</li>
-          <li><span class="check">✓</span>Common areas detailed (living/dining/hallways)</li>
-          <li><span class="check">✓</span>Notes + photos on request; add-ons billed if needed</li>
-        </ul>
-      </div>
-    </div>
-          <div class="pricing">
-        <div class="priceTop">
-          <div>
-            <div class="plan">4BR+</div>
-            <div class="sub">Standard Turnover clean</div>
-          </div>
-          <div class="price">Quoted</div>
-        </div>
-        <ul class="list">
-          <li><span class="check">✓</span>Whole-home turnover reset (all rooms + touchpoints)</li>
-          <li><span class="check">✓</span>Multiple bathrooms sanitized + restocked</li>
-          <li><span class="check">✓</span>Common areas detailed (living/dining/hallways)</li>
-          <li><span class="check">✓</span>Notes + photos on request; add-ons billed if needed</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="grid2" style="margin-top:14px">
-      <div class="feature">
-        <div class="icon">➕</div>
-        <h3>Common add‑ons</h3>
-        <p>Linen service • Extra bed set • Towel refresh • Supply restock • Pet hair • Dishes (light) • Fridge/oven (as quoted).</p>
-      </div>
-      <div class="feature">
-        <div class="icon">🧾</div>
-        <h3>Payments (Stripe)</h3>
-        <p>Pay via Stripe Checkout (deposit or full). If add‑ons are needed after arrival, we’ll send a Stripe invoice with clear notes for your records.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="booking">
-    <div class="sectionTitle">
-      <h2>Book a cleaning</h2>
-      <div class="hint">Calendly booking below. After booking, you can redirect to Stripe Checkout so payment happens right away.</div>
-    </div>
-
-    <div class="bookingWrap">
-      <div class="card embed">
-        <div class="embedHeader">
-          <p><b>How it works:</b> choose a service → pick an evening/weekend time → add address + lock/smart‑lock notes → <b>pay immediately</b> on the next screen. (Repeat hosts can save payment details for faster checkout.)</p>
-        </div>
-
-        <div class="embedInner">
-          <!-- Calendly inline widget begin -->
-          <!-- Calendly inline widget begin -->
-          <div class="calendly-inline-widget" data-url="https://calendly.com/ryancoupe/studio-1br?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-          <!-- Calendly inline widget end -->
-          <!-- Calendly inline widget end -->
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="icon">💳</div>
-        <h3>Pay immediately (and save for next time)</h3>
-        <p>
-          After a host books, Calendly can <b>auto‑redirect</b> to your Stripe Checkout page so payment happens right away.
-          Returning hosts can use <b>Link by Stripe</b> (if enabled) for faster checkout next time.
+  <!-- HERO VALUE PROPOSITION (Immediately Below Video) -->
+  <section class="container section">
+    <div class="grid">
+      <div>
+        <h1>Turnovers Done Right. Every Time.</h1>
+        <p class="lead">
+          <strong>Professional short-term rental turnovers built for serious hosts.</strong>
+          Turnly handles the cleaning, resetting, and readiness of your property so every guest walks into a five-star experience — without last-minute stress, missed details, or unreliable cleaners.
         </p>
+        <p class="lead" style="margin-top:10px"><strong>You host. We handle the rest.</strong></p>
+
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#" class="btn btn-primary">Tell Us About Your Property</a>
+        </div>
+
+        <div style="margin-top:18px;color:rgba(238,242,255,.9)">
+          <ul style="list-style:none;padding-left:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px">
+            <li>✔ Built exclusively for short-term rentals</li>
+            <li>✔ Photo-documented cleans</li>
+            <li>✔ Consistent, trained teams</li>
+            <li>✔ Reliable scheduling & fast response</li>
+            <li>✔ Scalable for single listings or portfolios</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>What Turnly Does</h3>
+        <p class="lead" style="font-size:15px">
+          Turnly is a <strong>full-service short-term rental turnover company</strong>. That means we don’t just clean — we reset your property for the next guest.
+        </p>
+        <ul>
+          <li>Complete top-to-bottom turnover clean</li>
+          <li>Bathroom and kitchen sanitization</li>
+          <li>Floor care (vacuuming & mopping)</li>
+          <li>Trash removal</li>
+          <li>Restocking check (if applicable)</li>
+          <li>Bed resets & linen handling (when selected)</li>
+          <li>Final walkthrough</li>
+          <li>Photo documentation before and after</li>
+        </ul>
+        <p class="lead" style="font-size:15px;margin-top:10px"><strong>Your property is guest-ready — not “mostly clean.”</strong></p>
       </div>
     </div>
   </section>
 
-  <section id="faq" class="alt">
-    <style>
-      /* FAQ emphasis */
-      #faq .feature h3{font-size:18px; font-weight:500;}
-    </style>
-    <div class="sectionTitle">
-      <h2>FAQ</h2>
-      <div class="hint">Common questions from Airbnb hosts before booking.</div>
+  <!-- THE PROBLEM (RELATABLE PAIN) -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">Hosting shouldn’t feel this hard.</h2>
+      <p class="lead" style="font-size:16px">
+        If you manage a short-term rental, you’ve probably dealt with:
+      </p>
+      <ul>
+        <li>Cleaners canceling or showing up late</li>
+        <li>Inconsistent quality from one turnover to the next</li>
+        <li>Missed details that lead to bad reviews</li>
+        <li>Scrambling between check-out and check-in</li>
+        <li>Juggling texts, payments, and schedules across multiple listings</li>
+      </ul>
+      <p class="lead" style="font-size:16px;margin-top:10px">
+        Most cleaning companies aren’t built for short-term rentals — and it shows.
+      </p>
+      <p class="lead" style="font-size:16px;margin-top:10px"><strong>Turnly was built from day one for STR turnovers.</strong></p>
     </div>
+  </section>
 
-    <div class="grid2">
-      <div class="feature">
-        <div class="icon">🕒</div>
-        <h3>What times do you clean?</h3>
-        <p>We focus on <b>evening and weekend turnovers</b>, which works well for same‑day check‑outs and weekend arrivals.</p>
+  <!-- DIFFERENTIATION (THIS IS WHERE YOU WIN) -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">Why Hosts Choose Turnly</h2>
+
+      <h3 style="margin:14px 0 6px">We’re Not a Marketplace. We’re an Operator.</h3>
+      <p class="lead" style="font-size:16px">
+        You’re not hiring random cleaners. You’re working with <strong>Turnly-trained teams</strong>, standardized processes, and documented results.
+      </p>
+
+      <h3 style="margin:14px 0 6px">Consistency Over Convenience</h3>
+      <p class="lead" style="font-size:16px">
+        Anyone can offer a cheap clean. We deliver <strong>repeatable quality</strong> that protects your reviews and your revenue.
+      </p>
+
+      <h3 style="margin:14px 0 6px">Built for Scale</h3>
+      <p class="lead" style="font-size:16px">
+        Whether you manage <strong>one listing or twenty</strong>, our systems are designed to grow with you — without sacrificing quality.
+      </p>
+
+      <h3 style="margin:14px 0 6px">Photo-Documented Accountability</h3>
+      <p class="lead" style="font-size:16px">
+        Every clean is documented. You know exactly what was done — no guessing, no excuses.
+      </p>
+
+      <h3 style="margin:14px 0 6px">We Respect Your Calendar</h3>
+      <p class="lead" style="font-size:16px">
+        Turnovers are scheduled around real check-in/check-out windows, not “whenever the cleaner gets there.”
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES / PACKAGES -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">Turnover Services</h2>
+
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:14px">
+        <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
+          <h3 style="margin:0 0 6px">Standard Turnover</h3>
+          <p class="lead" style="font-size:15px">Perfect for hosts who want a reliable, professional reset after every guest.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
+          <h3 style="margin:0 0 6px">Turnover + Linen Service</h3>
+          <p class="lead" style="font-size:15px">We handle stripping, replacing, and managing linens so you never worry about laundry or missing sets.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
+          <h3 style="margin:0 0 6px">Portfolio & Multi-Listing Support</h3>
+          <p class="lead" style="font-size:15px">Centralized scheduling, consistent pricing, and dependable teams for hosts managing multiple properties.</p>
+        </div>
       </div>
 
-      <div class="feature">
-        <div class="icon">🗝</div>
-        <h3>How do you access the property?</h3>
-        <p>Most hosts provide a smart‑lock code or lockbox. You’ll securely add access details during booking.</p>
+      <p class="lead" style="font-size:16px;margin-top:12px"><em>Not sure what you need? We’ll help you choose the right setup.</em></p>
+
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" class="btn btn-primary">Tell Us About Your Property</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (LOW FRICTION) -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">How Turnly Works</h2>
+      <ol style="margin:10px 0 0;padding-left:18px">
+        <li style="margin:8px 0"><strong>Tell Us About Your Property</strong> — Share your listing details with us.</li>
+        <li style="margin:8px 0"><strong>We Schedule the Turnover</strong> — We align with your booking calendar and access details.</li>
+        <li style="margin:8px 0"><strong>We Execute the Clean</strong> — Trained teams follow our standardized turnover checklist.</li>
+        <li style="margin:8px 0"><strong>You Get Confirmation</strong> — Photo documentation confirms your property is guest-ready.</li>
+      </ol>
+      <p class="lead" style="font-size:16px;margin-top:10px"><strong>That’s it. No chasing cleaners. No stress.</strong></p>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF (PLACEHOLDER) -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">Built for Hosts Who Care About Reviews</h2>
+      <p class="lead" style="font-size:16px">
+        Turnly is trusted by hosts who understand that cleanliness drives reviews, reviews drive bookings, and bookings drive revenue.
+      </p>
+      <p class="lead" style="font-size:16px"><em>(Insert testimonials, reviews, or early client quotes here as they come in.)</em></p>
+    </div>
+  </section>
+
+  <!-- STRONG CTA (END) -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">Ready to Stop Worrying About Turnovers?</h2>
+      <p class="lead" style="font-size:16px">
+        If you’re tired of unreliable cleaners, inconsistent results, and last-minute panic — <strong>Turnly is built for you.</strong>
+      </p>
+      <p class="lead" style="font-size:16px">
+        Let us handle the turnovers, so you can focus on growing your hosting business.
+      </p>
+
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" class="btn btn-primary">Tell Us About Your Property</a>
+        
       </div>
 
-      <div class="feature">
-        <div class="icon">📸</div>
-        <h3>Can I get photos after the clean?</h3>
-        <p>Yes. Photo confirmation is available upon request so you can verify the reset before guest check‑in.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">🧺</div>
-        <h3>Do you wash linens and towels?</h3>
-        <p>Linen service is available as an add‑on. We can wash, dry, remake beds, and stage towels for a hotel‑ready look.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">⏱</div>
-        <h3>Can you handle tight same‑day turnovers?</h3>
-        <p>Often yes, depending on availability. Book the earliest evening slot and text us if timing is tight so we can confirm before you promise it to a guest.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">🐾</div>
-        <h3>What about pets or heavier messes?</h3>
-        <p>Normal pet hair is fine. Excessive hair, trash, or unusually dirty conditions may require a small add‑on, which we’ll communicate upfront.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">🧾</div>
-        <h3>How does payment work?</h3>
-        <p>After booking, you’ll be redirected to Stripe Checkout to pay immediately. If add‑ons are needed, we send a separate Stripe invoice with notes.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">📅</div>
-        <h3>Is there a contract?</h3>
-        <p>No contracts. Book as needed. Many hosts start with one clean and continue once they see the consistency.</p>
-      </div>
+      <p class="lead" style="font-size:14px;margin-top:14px;color:rgba(238,242,255,.8)">
+        Turnly — professional short-term rental turnovers, done right.
+      </p>
     </div>
   </section>
 </main>
-
-<footer>
-  <div class="container">
-    <div class="footGrid">
-      <div>
-        <div>
-            <b style="font-size:15px;">Turnly</b>
-            <div class="footNote">Airbnb & short‑term rental cleaning • Photo‑ready turnovers • Easy online booking</div>
-          </div>
-        </div>
-        <div class="footNote" style="margin-top:12px;">
-          © <span id="year"></span> Turnly • All rights reserved.
-        </div>
-      </div>
-
-      <div class="mini">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#booking">Book</a>
-        <hr style="border:none;border-top:1px solid var(--border);margin:8px 0;">
-        <a href="/terms.html">Terms of Service</a>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/cancellation.html">Cancellation Policy</a>
-        <a href="/payment-policy.html">Payment & Add‑On Policy</a>
-        <a href="/photo-consent.html">Photo & Property Consent</a>
-        <a href="/liability.html">Liability Disclaimer</a>
-        <a href="/access-policy.html">Access & Entry Policy</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
