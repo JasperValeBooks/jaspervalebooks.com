@@ -119,6 +119,16 @@
       outline:none;
     }
 
+    /* Fix dropdown readability (some browsers render options with light backgrounds) */
+    select{
+      background: rgba(16,24,39,.85);
+      color: var(--text);
+    }
+    select option{
+      background: rgba(16,24,39,.95);
+      color: var(--text);
+    }
+
     input::placeholder, textarea::placeholder{color:rgba(238,242,255,.55)}
 
     textarea{min-height:140px;resize:vertical}
@@ -126,6 +136,17 @@
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 
     .hint{font-size:13px;color:rgba(238,242,255,.72);margin-top:8px}
+
+    .hidden{display:none !important}
+    .success-box{
+      border:1px solid rgba(124,92,255,.45);
+      background:rgba(124,92,255,.10);
+      border-radius:14px;
+      padding:14px;
+      margin-top:14px;
+    }
+    .success-title{font-weight:900;margin:0 0 6px}
+    .success-text{margin:0;color:rgba(238,242,255,.9)}
 
     .pill{
       display:inline-flex;
@@ -220,7 +241,7 @@
         </p>
 
         <!-- NOTE: This is a static form. Wire it to your backend or a form service later. -->
-        <form action="mailto:admin@turnlypros.com" method="post" enctype="text/plain">
+        <form id="contactForm" action="https://formspree.io/f/mzddvkgy" method="POST">
           <div class="form-row">
             <div>
               <label for="name">Name</label>
@@ -261,9 +282,23 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Share any details that help: number of properties, typical checkout/check-in windows, access method, linens, etc."></textarea>
 
+          <input type="hidden" name="_subject" value="Turnly Contact Form Submission" />
+
+          <!-- Honeypot (spam protection): humans won't see this; bots often fill it -->
+          <div class="hidden" aria-hidden="true">
+            <label for="company">Company</label>
+            <input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
           <button class="btn btn-primary" type="submit" style="width:100%;margin-top:14px">Send Message</button>
           <div class="hint">By submitting, you’re requesting a follow-up — not booking a service.</div>
+          <div id="formStatus" class="hint" aria-live="polite" style="margin-top:10px"></div>
         </form>
+
+        <div id="formSuccess" class="success-box hidden" role="status" aria-live="polite">
+          <p class="success-title">Message sent.</p>
+          <p class="success-text">We received your details and we’ll follow up shortly. If you need to add anything, email <strong>admin@turnlypros.com</strong>.</p>
+        </div>
 
         <div class="divider"></div>
 
@@ -272,7 +307,7 @@
           <span class="pill">Email: admin@turnlypros.com</span>
           <span class="pill">Service Area: North Carolina</span>
         </div>
-        <p class="hint" style="margin-top:10px">Replace these details if different.</p>
+        
       </div>
     </div>
   </section>
@@ -292,6 +327,50 @@
     </div>
   </section>
 </main>
+
+<script>
+  (function(){
+    const form = document.getElementById('contactForm');
+    
+    const successEl = document.getElementById('formSuccess');
+    if(!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Honeypot check: if filled, treat as spam and show success without sending
+      const honeypot = form.querySelector('input[name="_gotcha"]');
+      if(honeypot && honeypot.value && honeypot.value.trim().length > 0){
+        form.classList.add('hidden');
+        if(successEl) successEl.classList.remove('hidden');
+        if(statusEl) statusEl.textContent = '';
+        return;
+      }
+
+      if(statusEl) statusEl.textContent = 'Sending…';
+
+      try {
+        const formData = new FormData(form);
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if(res.ok){
+          form.reset();
+          form.classList.add('hidden');
+          if(successEl) successEl.classList.remove('hidden');
+          if(statusEl) statusEl.textContent = '';
+        } else {
+          if(statusEl) statusEl.textContent = 'Something went wrong. Please email admin@turnlypros.com.';
+        }
+      } catch(err){
+        if(statusEl) statusEl.textContent = 'Network error. Please email admin@turnlypros.com.';
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
